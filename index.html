@@ -1,508 +1,683 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Antonio Laisé — Dashboards industriels pour PME</title>
-<meta name="description" content="Conception et déploiement de tableaux de bord temps réel pour la production, la qualité et la logistique des PME industrielles. Hanovre, interventions FR / DE / EN." />
-<meta name="theme-color" content="#1E40AF" />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Antonio Laisé · Dashboards sur-mesure pour PME</title>
+  <meta name="description" content="Conseil indépendant : structuration de données et dashboards sur-mesure pour PME. Par Antonio Laisé, ingénieur mécanique data &amp; fiabilité, Hanovre." />
+
+  <!-- Open Graph (Facebook, LinkedIn, etc.) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Antonio Laisé · Dashboards sur-mesure pour PME" />
+  <meta property="og:description" content="Conseil indépendant : structuration de données et dashboards sur-mesure pour PME." />
+  <meta property="og:image" content="assets/dashboard-maintenance.png" />
+  <meta property="og:image:width" content="1920" />
+  <meta property="og:image:height" content="1080" />
+  <meta property="og:locale" content="fr_FR" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Antonio Laisé · Dashboards sur-mesure pour PME" />
+  <meta name="twitter:description" content="Conseil indépendant : structuration de données et dashboards sur-mesure pour PME." />
+  <meta name="twitter:image" content="assets/dashboard-maintenance.png" />
+
+  <!-- Favicon SVG (flèche montante en bleu primaire, cohérent avec le logo) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232163CA' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='7' y1='17' x2='17' y2='7'/%3E%3Cpolyline points='8 7 17 7 17 16'/%3E%3C/svg%3E" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" />
+  <link rel="stylesheet" href="styles.css?v=2" />
+
+  <!-- Umami Analytics (privacy-friendly, sans cookies) -->
+  <!-- TODO : remplacer YOUR_WEBSITE_ID après création sur cloud.umami.is -->
+  <script defer src="https://cloud.umami.is/script.js" data-website-id="YOUR_WEBSITE_ID"></script>
 </head>
 <body>
 
-<!-- ============================================================== -->
-<!-- NAVBAR                                                          -->
-<!-- ============================================================== -->
-<header class="nav">
-  <div class="container nav-inner">
-    <a href="#hero" class="brand">
-      <span class="mark"></span>
-      <span class="brand-text">Antonio Laisé <span class="brand-tag">Consulting</span></span>
-    </a>
-    <nav class="nav-links">
-      <a href="#offre">Offre</a>
-      <a href="#demo">Démo live</a>
-      <a href="#cas">Cas client</a>
-      <a href="#methode">Méthode</a>
-      <a href="#tarifs">Tarifs</a>
-    </nav>
-    <a href="#contact" class="btn btn-primary btn-sm">Réserver 30 min</a>
-    <button class="nav-burger" aria-label="Menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</header>
-
-<main>
-
-  <!-- ============================================================== -->
-  <!-- HERO                                                            -->
-  <!-- ============================================================== -->
-  <section id="hero" class="section section-hero">
-    <div class="container hero-grid">
-      <div class="hero-text reveal">
-        <p class="eyebrow">Dashboards industriels · PME 20–500 personnes</p>
-        <h1 class="display">Vos données<br />décident <em>plus vite.</em></h1>
-        <p class="lead">Conception et déploiement de tableaux de bord temps réel pour la production, la qualité et la logistique d'ateliers industriels.</p>
-        <div class="hero-meta">
-          <span class="name">Antonio Laisé — Ingénieur Data &amp; Fiabilité</span>
-          <span>Hanovre, Allemagne · Interventions FR / DE / EN</span>
-        </div>
-        <div class="hero-cta">
-          <a href="#contact" class="btn btn-primary">Réserver 30 minutes</a>
-          <a href="#demo" class="btn">Voir la démo live</a>
-        </div>
-      </div>
-
-      <aside class="hero-panel reveal">
-        <div class="panel-label"><span class="live-dot"></span><span>Atelier — Ligne 3 · 14:32</span></div>
-
-        <div class="kpi-grid">
-          <div class="kpi">
-            <div class="lbl">OEE</div>
-            <div class="val">87<span class="unit">%</span></div>
-            <div class="delta">▲ 4.2 pts vs semaine dernière</div>
-          </div>
-          <div class="kpi">
-            <div class="lbl">Cadence</div>
-            <div class="val">412<span class="unit">/h</span></div>
-            <div class="delta">▲ objectif tenu</div>
-          </div>
-          <div class="kpi">
-            <div class="lbl">Rebut</div>
-            <div class="val">1.6<span class="unit">%</span></div>
-            <div class="delta bad">▲ 0.3 pt — à surveiller</div>
-          </div>
-          <div class="kpi">
-            <div class="lbl">Retards livraison</div>
-            <div class="val">0</div>
-            <div class="delta">▼ 3 semaines consécutives</div>
-          </div>
-        </div>
-
-        <svg class="spark" viewBox="0 0 600 90" preserveAspectRatio="none" aria-hidden="true">
-          <defs>
-            <linearGradient id="sg" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stop-color="#1E40AF" stop-opacity="0.18"/>
-              <stop offset="100%" stop-color="#1E40AF" stop-opacity="0"/>
-            </linearGradient>
-          </defs>
-          <path d="M0,70 L40,62 L80,66 L120,54 L160,58 L200,46 L240,50 L280,38 L320,42 L360,30 L400,34 L440,24 L480,28 L520,20 L560,16 L600,12 L600,90 L0,90 Z" fill="url(#sg)"/>
-          <path d="M0,70 L40,62 L80,66 L120,54 L160,58 L200,46 L240,50 L280,38 L320,42 L360,30 L400,34 L440,24 L480,28 L520,20 L560,16 L600,12" fill="none" stroke="#1E40AF" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+  <!-- ============ HEADER ============ -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#" class="brand">
+        <svg class="brand-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="7" y1="17" x2="17" y2="7"></line>
+          <polyline points="8 7 17 7 17 16"></polyline>
         </svg>
-      </aside>
+        <span class="brand-name">Antonio Laisé</span>
+      </a>
+      <nav class="nav">
+        <a href="#solution" data-i18n="nav_solution">Solution</a>
+        <a href="#approche" data-i18n="nav_approche">Approche</a>
+        <a href="#exemples" data-i18n="nav_exemples">Exemples</a>
+        <a href="#pourquoi-custom" data-i18n="nav_pourquoi">Pourquoi custom</a>
+        <a href="#tarifs" data-i18n="nav_tarifs">Tarifs</a>
+        <a href="#a-propos" data-i18n="nav_apropos">À propos</a>
+      </nav>
+      <button class="lang-toggle" id="langToggle" type="button" aria-label="Switch language">EN</button>
+      <a href="#contact" class="btn btn-primary btn-small" data-i18n="header_cta">Échangeons 30 min</a>
     </div>
-  </section>
+  </header>
 
-  <!-- ============================================================== -->
-  <!-- LE CONSTAT                                                      -->
-  <!-- ============================================================== -->
-  <section id="constat" class="section section-alt">
-    <div class="container constat-grid">
-      <div class="reveal">
-        <p class="eyebrow">Le constat</p>
-        <h2 class="quote">Les données existent déjà dans votre atelier. C'est la lecture qui manque.</h2>
-        <p class="attr">— Observation récurrente, audits PME industrielles 2024–2026</p>
+  <main id="top">
+
+    <!-- ============ SECTION 1 : HERO ============ -->
+    <section class="section hero">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <p class="eyebrow" data-i18n="hero_eyebrow">Conseil data indépendant</p>
+          <h1 data-i18n="hero_title">Vos données structurées. Votre pilotage clarifié.</h1>
+          <p class="lead" data-i18n="hero_lead">
+            J'aide les PME à organiser leurs données et à construire des dashboards
+            sur-mesure pour piloter leur activité avec une vue claire, adaptée à leur métier.
+          </p>
+          <div class="hero-actions">
+            <a href="#contact" class="btn btn-primary" data-i18n="hero_cta_primary">Échangeons 30 minutes</a>
+            <a href="#exemples" class="btn btn-ghost" data-i18n="hero_cta_secondary">Voir des exemples</a>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="dashboard-mock dashboard-mock-hero dashboard-mock-img">
+            <div class="dm-chrome" style="padding: 5px 16px">
+              <span class="dm-dots"><i></i><i></i><i></i></span>
+              <span class="dm-url">dashboard.antonio-laise.eu</span>
+              <span class="dm-lang">FR · EN · DE</span>
+            </div>
+            <img class="dm-image" src="assets/dashboard-maintenance.png?v=4" alt="Aperçu d'un dashboard de maintenance industrielle" width="1920" height="1080" />
+          </div>
+        </div>
       </div>
+    </section>
 
-      <ol class="pain-list reveal">
-        <li>
-          <span class="num">01</span>
-          <span class="text">Les <strong>indicateurs sont éparpillés</strong> entre ERP, Excel, fichiers qualité et tableaux blancs d'atelier.</span>
-        </li>
-        <li>
-          <span class="num">02</span>
-          <span class="text">La donnée arrive <strong>la semaine d'après</strong>, quand la décision aurait dû être prise lundi matin.</span>
-        </li>
-        <li>
-          <span class="num">03</span>
-          <span class="text">Les outils BI génériques sont <strong>chers, longs à déployer</strong>, et finissent par n'être consultés par personne.</span>
-        </li>
-        <li>
-          <span class="num">04</span>
-          <span class="text">Les équipes terrain <strong>ne se reconnaissent pas</strong> dans des dashboards pensés pour la finance.</span>
-        </li>
-      </ol>
-    </div>
-  </section>
-
-  <!-- ============================================================== -->
-  <!-- OFFRE                                                           -->
-  <!-- ============================================================== -->
-  <section id="offre" class="section">
-    <div class="container">
-      <div class="section-head reveal">
-        <p class="eyebrow">Mon offre</p>
-        <h2 class="section-title">Trois livrables pensés pour l'atelier, pas pour la salle de réunion.</h2>
+    <!-- ============ SECTION 2 : LE CONSTAT ============ -->
+    <section class="section section-alt" id="constat">
+      <div class="container narrow">
+        <p class="eyebrow" data-i18n="constat_eyebrow">Le constat</p>
+        <h2 data-i18n="constat_title">Beaucoup de données. Peu de visibilité.</h2>
+        <p class="body-text" data-i18n="constat_body">
+          La plupart des PME pilotent à l'instinct, ou avec des outils mal adaptés.
+          Les données existent. Elles sont juste éparpillées entre fichiers Excel, Google Sheets,
+          ERP et exports persos. Power BI et Tableau sont pensés pour des grandes entreprises,
+          avec leurs équipes data dédiées. Résultat : pas de vraie visibilité sur l'activité,
+          et des décisions prises sans appui chiffré.
+        </p>
       </div>
+    </section>
 
-      <div class="offer-grid">
-        <article class="offer-card reveal">
-          <span class="pill">Pour la production</span>
-          <h3>Dashboard temps réel atelier</h3>
-          <p>Diffusé en continu sur écrans de ligne, lisible à 5 mètres, mis à jour toutes les 30 secondes.</p>
-          <ul>
-            <li>OEE, cadence, rebut, absences</li>
-            <li>Code couleur lisible en un coup d'œil</li>
-            <li>Multilingue FR / DE / EN</li>
+    <!-- ============ SECTION 3 : MA SOLUTION ============ -->
+    <section class="section" id="solution">
+      <div class="container">
+        <p class="eyebrow" data-i18n="solution_eyebrow">Ma solution</p>
+        <h2 data-i18n="solution_title">Des dashboards web connectés à vos données réelles.</h2>
+        <p class="body-text" style="height: 56px; width: 650px; font-weight: 400" data-i18n="solution_sub">
+          Pas d'installation. Pas de logiciel à apprendre. Vos données restent où elles sont.
+        </p>
+
+        <div class="compare-block">
+
+          <!-- Tableur Excel/Sheets simulé -->
+          <div class="sheet-window">
+            <div class="sheet-titlebar">
+              <span class="mac-dot red"></span>
+              <span class="mac-dot yellow"></span>
+              <span class="mac-dot green"></span>
+              <span class="sheet-titlebar-title">Project_Tracking.xlsx</span>
+            </div>
+            <table class="sheet-grid">
+              <thead>
+                <tr><th></th><th>A</th><th>B</th></tr>
+              </thead>
+              <tbody>
+                <tr><th>1</th><td>Date_Start</td><td class="sheet-num">01/01/2026</td></tr>
+                <tr><th>2</th><td>Date_End_Plan</td><td class="sheet-num">30/06/2026</td></tr>
+                <tr><th>3</th><td>Date_End_Est</td><td class="sheet-num">15/07/2026</td></tr>
+                <tr><th>4</th><td>Tasks_Total</td><td class="sheet-num">50</td></tr>
+                <tr><th>5</th><td>Tasks_Done</td><td class="sheet-num">36</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Carte PROGRESS du dashboard -->
+          <div class="dash-side">
+            <div class="kpi-card warn">
+              <div class="kpi-title">PROGRESS <span class="period-tag">PROJECT</span></div>
+              <div class="kpi-value warn">72%</div>
+              <div class="kpi-label" data-i18n="kpi_label_progress">72% done, 80.6% of schedule elapsed</div>
+              <div class="kpi-bar-wrap">
+                <div class="kpi-bar-zone-1"></div>
+                <div class="kpi-bar-zone-2"></div>
+                <div class="kpi-bar-zone-3"></div>
+                <div class="kpi-bar-fill"></div>
+                <div class="kpi-bar-target"></div>
+              </div>
+              <div class="kpi-footer">
+                <div class="kpi-stat">
+                  <div class="kpi-stat-value">0.89</div>
+                  <div class="kpi-stat-label">SPI</div>
+                </div>
+                <div class="kpi-stat">
+                  <div class="kpi-stat-value bad" data-i18n="kpi_value_days_late">-15j days late</div>
+                  <div class="kpi-stat-label" data-i18n="kpi_label_days">DAYS VARIANCE</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <p class="solution-legend" data-i18n-html="solution_legend_html">
+          Vos équipes saisissent les données brutes dans un outil qu'elles connaissent déjà.<br />
+          Le dashboard fait tout le reste, automatiquement.
+        </p>
+
+        <div class="solution-grid">
+          <article class="feature">
+            <div class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 0 1-15.6 6.1"/><path d="M3 12A9 9 0 0 1 18.6 5.9"/><path d="M18 3v4h-4"/><path d="M6 21v-4h4"/></svg></div>
+            <h3 data-i18n="feature1_title">Connecté en temps réel à vos sources existantes</h3>
+            <p data-i18n="feature1_desc">Google Sheets, Excel local, Excel OneDrive / SharePoint, et autres sources sur demande (ERP, bases de données, API). Vous saisissez la donnée brute, le dashboard se met à jour automatiquement.</p>
+          </article>
+
+          <article class="feature">
+            <div class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="8" height="8" rx="1.5"/><rect x="13" y="3" width="8" height="5" rx="1.5"/><rect x="3" y="13" width="8" height="8" rx="1.5"/><rect x="13" y="10" width="8" height="11" rx="1.5"/></svg></div>
+            <h3 data-i18n="feature2_title">Template intelligent</h3>
+            <p data-i18n="feature2_desc">Vous ne remplissez que les informations manquantes. Tous les calculs (moyennes, ratios, agrégations, alertes) sont faits automatiquement côté serveur.</p>
+          </article>
+
+          <article class="feature">
+            <div class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="14" height="10" rx="1.5"/><path d="M6 18h6"/><path d="M9 14v4"/><rect x="17" y="9" width="5" height="11" rx="1.5"/></svg></div>
+            <h3 data-i18n="feature3_title">Accessible n'importe où, sur n'importe quel écran</h3>
+            <p data-i18n="feature3_desc">Simple lien web protégé, pas d'installation. Fonctionne sur ordinateur, tablette, smartphone, écran TV d'atelier.</p>
+          </article>
+
+          <article class="feature">
+            <div class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3.5 12h17"/><path d="M12 3a14 14 0 0 1 0 18"/><path d="M12 3a14 14 0 0 0 0 18"/></svg></div>
+            <h3 data-i18n="feature4_title">Multi-langue natif</h3>
+            <p data-i18n="feature4_desc">Bascule FR / EN / DE (ou autre langue sur demande) en 1 clic. Idéal pour les PME internationales ou avec des équipes multi-pays.</p>
+          </article>
+
+          <article class="feature">
+            <div class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="13" rx="1.5"/><path d="M8 21h8"/><path d="M12 17v4"/><path d="m9 8 4 2.5L9 13z" fill="currentColor" stroke="none"/></svg></div>
+            <h3 data-i18n="feature5_title">Mode TV plein écran</h3>
+            <p data-i18n="feature5_desc">Pensé pour l'affichage permanent en open space, atelier ou salle de réunion. Mode sombre disponible pour réduire la fatigue visuelle.</p>
+          </article>
+
+          <article class="feature">
+            <div class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h6"/><path d="M14 6h6"/><circle cx="12" cy="6" r="2"/><path d="M4 12h2"/><path d="M10 12h10"/><circle cx="8" cy="12" r="2"/><path d="M4 18h10"/><path d="M18 18h2"/><circle cx="16" cy="18" r="2"/></svg></div>
+            <h3 data-i18n="feature6_title">Conçu sur-mesure pour votre métier</h3>
+            <p data-i18n="feature6_desc">KPIs, visualisations, alertes définis avec vous lors de l'audit. Pas de visuels génériques qui ne correspondent à rien.</p>
+          </article>
+
+          <article class="feature">
+            <div class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="1.5"/><path d="M3 11h18"/><path d="M7 4v3"/><path d="M11 4v3"/><path d="M15 4v3"/></svg></div>
+            <h3 data-i18n="feature7_title">Organisé en plusieurs onglets thématiques</h3>
+            <p data-i18n="feature7_desc">Chaque dashboard est structuré en onglets (par exemple : Overview, Détails, Alertes, Recommandations). Un dashboard peut comporter autant d'onglets que nécessaire selon les besoins.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SECTION 4 : MON APPROCHE ============ -->
+    <section class="section section-alt" id="approche">
+      <div class="container">
+        <p class="eyebrow" data-i18n="approche_eyebrow">Mon approche</p>
+        <h2 data-i18n="approche_title">Une démarche en quatre étapes.</h2>
+        <ol class="steps">
+          <li class="step">
+            <span class="step-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="6"/><path d="m20 20-3.6-3.6"/></svg></span>
+            <span class="step-num">01</span>
+            <h3 data-i18n="step1_title">Audit des données existantes</h3>
+            <p class="step-meta" data-i18n="step1_meta">3 jours</p>
+            <p data-i18n="step1_desc">Cartographie de ce qui existe : sources, formats, qualité. Identification des KPIs critiques pour votre activité.</p>
+          </li>
+          <li class="step">
+            <span class="step-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5.5" rx="7.5" ry="2.5"/><path d="M4.5 5.5v6c0 1.4 3.4 2.5 7.5 2.5s7.5-1.1 7.5-2.5v-6"/><path d="M4.5 11.5v6c0 1.4 3.4 2.5 7.5 2.5s7.5-1.1 7.5-2.5v-6"/></svg></span>
+            <span class="step-num">02</span>
+            <h3 data-i18n="step2_title">Structuration</h3>
+            <p class="step-meta" data-i18n="step2_meta">Inclus dans l'audit</p>
+            <p data-i18n="step2_desc">Définition d'un schéma de données propre. Organisation des sources (Google Sheets, Excel local, OneDrive/SharePoint).</p>
+          </li>
+          <li class="step">
+            <span class="step-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20h18"/><path d="M6 20V12"/><path d="M11 20V6"/><path d="M16 20v-9"/><path d="M21 20V8"/></svg></span>
+            <span class="step-num">03</span>
+            <h3 data-i18n="step3_title">Construction du dashboard</h3>
+            <p class="step-meta" data-i18n="step3_meta">2 à 3 jours par dashboard</p>
+            <p data-i18n="step3_desc">Développement sur-mesure : KPIs métier, visualisations adaptées, multi-langue natif (FR/EN/DE) si besoin.</p>
+          </li>
+          <li class="step">
+            <span class="step-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 16V3"/><path d="m7 8 5-5 5 5"/><path d="M4 13v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-6"/></svg></span>
+            <span class="step-num">04</span>
+            <h3 data-i18n="step4_title">Déploiement et formation</h3>
+            <p class="step-meta" data-i18n="step4_meta">1 à 2 jours</p>
+            <p data-i18n="step4_desc">Mise en ligne sécurisée. Formation à l'utilisation et à la mise à jour des données.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ SECTION 5 : EXEMPLES ============ -->
+    <section class="section" id="exemples">
+      <div class="container">
+        <p class="eyebrow" data-i18n="exemples_eyebrow">Exemples concrets</p>
+        <h2 data-i18n="exemples_title">Trois dashboards de démonstration.</h2>
+
+        <div class="example-banner">
+          <p data-i18n-html="exemples_banner_html">
+            Ces 3 dashboards sont des exemples concrets de ce que je sais produire.
+            Chacun est entièrement adaptable : KPIs, visualisations, onglets, sources de données,
+            langues, charte graphique. <strong>Votre dashboard final sera différent, taillé à vos besoins métier.</strong>
+            <br /><br />
+            <em>Captures ci-dessous : vues en mode TV plein écran. Les autres onglets de chaque dashboard sont disponibles sur demande.</em>
+          </p>
+        </div>
+
+        <div class="examples-grid">
+
+          <article class="example">
+            <div class="dashboard-mock dashboard-mock-sm dashboard-mock-img">
+              <div class="dm-chrome" style="padding: 5px 16px 1px"><span class="dm-dots"><i></i><i></i><i></i></span><span class="dm-url">Project Tracking</span></div>
+              <img class="dm-image" src="assets/dashboard-project.png?v=4" alt="Capture du dashboard Project Tracking" loading="lazy" width="1920" height="1080" />
+            </div>
+            <h3 data-i18n="example1_title">Dashboard Project Tracking</h3>
+            <p data-i18n="example1_desc">Suivi de projet : EVM (CPI, SPI, EAC), burndown, S-curve budget, jalons, équipe, risques.</p>
+            <ul class="example-tabs">
+              <li>Overview</li>
+              <li>Analytics</li>
+              <li>Milestones</li>
+            </ul>
+            <p class="example-note" data-i18n="example_note">Exemple. Adaptable à vos KPIs métier.</p>
+          </article>
+
+          <article class="example">
+            <div class="dashboard-mock dashboard-mock-sm dashboard-mock-img">
+              <div class="dm-chrome" style="padding: 5px 16px 1px"><span class="dm-dots"><i></i><i></i><i></i></span><span class="dm-url">Maintenance &amp; Fiabilité</span></div>
+              <img class="dm-image" src="assets/dashboard-maintenance.png?v=4" alt="Capture du dashboard Maintenance &amp; Fiabilité" loading="lazy" width="1920" height="1080" />
+            </div>
+            <h3 data-i18n="example2_title">Dashboard Maintenance &amp; Fiabilité</h3>
+            <p data-i18n="example2_desc">MTBF, MTTR, disponibilité, alertes par règles, recommandations.</p>
+            <ul class="example-tabs">
+              <li>Overview</li>
+              <li>Reliability</li>
+              <li>Maintenance</li>
+              <li>Recommendations</li>
+            </ul>
+            <p class="example-note" data-i18n="example_note">Exemple. Adaptable à vos KPIs métier.</p>
+          </article>
+
+          <article class="example">
+            <div class="dashboard-mock dashboard-mock-sm dashboard-mock-img">
+              <div class="dm-chrome" style="padding: 5px 16px 1px"><span class="dm-dots"><i></i><i></i><i></i></span><span class="dm-url">Production</span></div>
+              <img class="dm-image" src="assets/dashboard-production.png?v=4" alt="Capture du dashboard Production" loading="lazy" width="1920" height="1080" />
+            </div>
+            <h3 data-i18n="example3_title">Dashboard Production</h3>
+            <p data-i18n="example3_desc">Suivi qualité, réclamations clients et fournisseurs, sécurité, conformité, expéditions.</p>
+            <ul class="example-tabs">
+              <li>Dashboard</li>
+              <li>Detailed Analytics</li>
+            </ul>
+            <p class="example-note" data-i18n="example_note">Exemple. Adaptable à vos KPIs métier.</p>
+          </article>
+
+        </div>
+
+        <div class="demo-cta">
+          <div class="demo-cta-text">
+            <h3 data-i18n="demo_title">Voir un dashboard en condition réelle</h3>
+            <p data-i18n="demo_desc">
+              Sur demande, je peux vous donner un accès interactif à l'un de ces dashboards démo,
+              ainsi qu'à la source de données (Google Sheets) qui l'alimente. Vous voyez le fonctionnement global :
+              vous modifiez une cellule, le dashboard se met à jour. Vous comprenez la simplicité de la mise à jour côté utilisateur.
+            </p>
+          </div>
+          <a href="#contact" class="btn btn-primary" data-prefill="demo" data-i18n="demo_cta">
+            Demander une démo interactive
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SECTION 6 : POURQUOI PAS POWER BI ============ -->
+    <section class="section section-alt" id="pourquoi-custom">
+      <div class="container">
+        <p class="eyebrow" data-i18n="pourquoi_eyebrow">Comparaison</p>
+        <h2 data-i18n="pourquoi_title">Pourquoi pas Power BI ou Tableau&nbsp;?</h2>
+        <p class="body-text" data-i18n="pourquoi_intro">
+          La plupart des PME pensent que Power BI est « simple » parce qu'il est inclus dans
+          leur abonnement Microsoft 365. C'est vrai pour des graphiques basiques. Mais dès
+          qu'on veut un outil de pilotage vraiment utile et personnalisé, on se retrouve vite limité.
+        </p>
+
+        <div class="cards-grid">
+
+          <article class="card">
+            <p class="card-num">1</p>
+            <h3 data-i18n="card1_title">Customisation visuelle bridée</h3>
+            <p data-i18n="card1_intro">Power BI impose ses visuels prédéfinis. Quelques exemples simples en custom, compliqués voire impossibles en Power BI :</p>
+            <ul>
+              <li data-i18n-html="card1_item1_html"><strong>Mise en forme conditionnelle de forme :</strong> impossible nativement. Pour afficher des feux signaux (rouge / orange / vert), il faut bidouiller avec des visuels customs externes payants ou des SVG codés en DAX.</li>
+              <li data-i18n-html="card1_item2_html"><strong>Mode TV plein écran lisible :</strong> pas de gestion du rotating ni d'ajustement aux écrans larges d'atelier.</li>
+              <li data-i18n-html="card1_item3_html"><strong>Layout vraiment personnalisé :</strong> grille rigide. Difficile de faire un design unique aligné avec votre marque.</li>
+            </ul>
+            <p class="card-tag" data-i18n="card1_tag">En custom : c'est du code, donc tout est possible, dès la première itération.</p>
+          </article>
+
+          <article class="card">
+            <p class="card-num">2</p>
+            <h3 data-i18n="card2_title">Multi-langue natif difficile</h3>
+            <p data-i18n="card2_desc">Power BI gère le multi-langue via des configurations complexes : rôles, traductions de modèles, jeux de données séparés. Pour une PME internationale, ça devient vite un cauchemar à maintenir.</p>
+            <p class="card-tag" data-i18n="card2_tag">En custom : bascule FR / EN / DE en 1 clic dans le header, traductions centralisées dans un fichier simple à éditer.</p>
+          </article>
+
+          <article class="card">
+            <p class="card-num">3</p>
+            <h3 data-i18n="card3_title">La fausse simplicité</h3>
+            <p data-i18n="card3_intro">Power BI est simple pour glisser un Excel et faire un bar chart. Dès que les besoins métier deviennent réels :</p>
+            <ul>
+              <li data-i18n-html="card3_item1_html"><strong>Alerte conditionnelle métier :</strong> « M'envoyer un mail si la disponibilité passe sous 92% pendant 3 jours » → DAX complexe ou Power Automate à configurer.</li>
+              <li data-i18n-html="card3_item2_html"><strong>KPI métier calculé :</strong> OEE avec règles métier spécifiques → DAX avancé, formules longues à maintenir.</li>
+              <li data-i18n-html="card3_item3_html"><strong>Drilldown personnalisé :</strong> voir l'historique de pannes filtré, avec lien vers le bon de travail GMAO → intégration complexe.</li>
+            </ul>
+            <p class="card-tag" data-i18n="card3_tag">En custom : on définit vos vrais besoins métier, et c'est codé une fois pour toutes, sans bricolage DAX.</p>
+          </article>
+
+        </div>
+
+        <blockquote class="pull-quote" data-i18n="pull_quote">Power BI est inclus dans Microsoft 365, c'est vrai. Mais "inclus" ne veut pas dire "adapté à votre besoin". Pour un outil de pilotage vraiment utile, taillé à vos KPIs métier, avec une mise en forme qui parle, un dashboard sur-mesure est souvent plus rapide à mettre en place et plus simple à faire évoluer.</blockquote>
+      </div>
+    </section>
+
+    <!-- ============ SECTION 7 : TARIFS ============ -->
+    <section class="section" id="tarifs">
+      <div class="container">
+        <p class="eyebrow" data-i18n="tarifs_eyebrow">Tarifs</p>
+        <h2 data-i18n="tarifs_title">Des formules claires, sans surprises.</h2>
+
+        <div class="pricing-grid">
+          <article class="price-card">
+            <h3 data-i18n="price1_title">Audit Data</h3>
+            <p class="price-duration" data-i18n="price1_duration">3 jours</p>
+            <p class="price-amount">800&nbsp;€</p>
+            <p data-i18n="price1_desc">Cartographie de vos données, identification des KPIs critiques, recommandations.</p>
+          </article>
+
+          <article class="price-card price-card-featured">
+            <h3 data-i18n="price2_title">Build Complet</h3>
+            <p class="price-duration" data-i18n="price2_duration">6 à 7 jours</p>
+            <p class="price-amount">2&nbsp;000&nbsp;€</p>
+            <p data-i18n="price2_desc">Audit + 1 dashboard sur-mesure + déploiement + formation.</p>
+          </article>
+
+          <article class="price-card">
+            <h3 data-i18n="price3_title">Pack 2 dashboards</h3>
+            <p class="price-duration" data-i18n="price3_duration">9 à 10 jours</p>
+            <p class="price-amount">2&nbsp;900&nbsp;€</p>
+            <p data-i18n="price3_desc">Audit + 2 dashboards + déploiement + formation.</p>
+          </article>
+
+          <article class="price-card">
+            <h3 data-i18n="price4_title">Pack 3 dashboards</h3>
+            <p class="price-duration" data-i18n="price4_duration">12 à 13 jours</p>
+            <p class="price-amount">3&nbsp;800&nbsp;€</p>
+            <p data-i18n="price4_desc">Audit + 3 dashboards + déploiement + formation.</p>
+          </article>
+        </div>
+
+        <div class="maintenance">
+          <h3 data-i18n="maintenance_title">Maintenance mensuelle (optionnelle)</h3>
+          <ul class="maintenance-list">
+            <li data-i18n-html="maintenance1_html"><strong>Basique · 50&nbsp;€/mois par dashboard</strong><span>Hébergement + corrections critiques.</span></li>
+            <li data-i18n-html="maintenance2_html"><strong>Standard · 100&nbsp;€/mois par dashboard</strong><span>Basique + 1 h d'intervention incluse par mois.</span></li>
+            <li data-i18n-html="maintenance3_html"><strong>Intervention hors forfait · 80&nbsp;€/h</strong><span>Facturée au temps passé.</span></li>
           </ul>
-        </article>
+        </div>
 
-        <article class="offer-card reveal">
-          <span class="pill">Pour le pilotage</span>
-          <h3>Analyse qualité &amp; logistique</h3>
-          <p>Tableaux d'analyse pour réunions de pilotage hebdomadaires, focalisés sur les écarts vs objectifs.</p>
-          <ul>
-            <li>Réclamations client &amp; fournisseur</li>
-            <li>Plans d'action et deadlines suivies</li>
-            <li>Export PDF prêt pour le COMEX</li>
-          </ul>
-        </article>
+        <p class="notice" data-i18n-html="tarifs_notice_html">
+          <strong>Tarif premier client appliqué.</strong>
+          Mes premières missions bénéficient d'un tarif réduit, le temps de constituer mes premières références.
+        </p>
+      </div>
+    </section>
 
-        <article class="offer-card reveal">
-          <span class="pill">Pour durer</span>
-          <h3>Intégration sans rupture</h3>
-          <p>Greffé sur l'existant — Google Sheets, ERP, fichiers qualité — sans imposer un nouvel outil aux équipes.</p>
-          <ul>
-            <li>Python, SQL, Streamlit, Power BI</li>
-            <li>Hébergement cloud ou on-premise</li>
-            <li>Formation et reprise en interne</li>
-          </ul>
-        </article>
+    <!-- ============ SECTION 8 : QUI SUIS-JE ============ -->
+    <section class="section section-alt" id="a-propos">
+      <div class="container about-grid">
+        <div class="about-photo">
+          <div class="about-photo-frame">
+            <img src="assets/antonio.jpg" alt="Portrait d'Antonio Laisé" width="2108" height="2108" loading="lazy" />
+          </div>
+        </div>
+        <div class="about-text">
+          <p class="eyebrow" data-i18n="apropos_eyebrow">Qui suis-je</p>
+          <h2 data-i18n="apropos_title">Antonio Laisé, ingénieur data &amp; fiabilité.</h2>
+          <p data-i18n="apropos_p1">
+            Ingénieur mécanique de l'UTC, spécialité Data &amp; Fiabilité pour l'Industrie.
+            Basé à Hanovre, j'interviens en France et en Allemagne.
+          </p>
+          <p data-i18n="apropos_p2">
+            Mes expériences industrielles : Nexans Hanovre (optimisation de process industriel,
+            tableaux de bord opérationnels) et EDF (génie civil nucléaire).
+          </p>
+          <p class="about-pitch" data-i18n="apropos_pitch">Ce qui m'anime dans le travail : organiser des données, simplifier des processus qui s'enlisent, automatiser ce qui peut l'être, réduire le temps passé sur les tâches répétitives. C'est ce que je viens chercher dans chaque mission.</p>
+          <p>
+            <a href="https://antonio-laise.netlify.app/" target="_blank" rel="noopener" class="link link-cv" data-i18n="apropos_cv">Voir mon CV en ligne →</a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SECTION 9 : CONTACT ============ -->
+    <section class="section" id="contact">
+      <div class="container narrow">
+        <p class="eyebrow" data-i18n="contact_eyebrow">Contact</p>
+        <h2 data-i18n="contact_title">Échangeons 30 minutes.</h2>
+        <p class="body-text" data-i18n="contact_body">Décrivez votre besoin en quelques mots. Je reviens vers vous sous 24 heures ouvrées pour caler un échange.</p>
+
+        <form
+          class="contact-form"
+          name="contact"
+          method="POST"
+          data-netlify="true"
+          netlify-honeypot="bot-field"
+        >
+          <input type="hidden" name="form-name" value="contact" />
+          <p hidden><label>Ne pas remplir : <input name="bot-field" /></label></p>
+
+          <div class="form-row">
+            <div class="field">
+              <label for="firstname" data-i18n="label_firstname">Prénom *</label>
+              <input id="firstname" name="firstname" type="text" required />
+            </div>
+            <div class="field">
+              <label for="lastname" data-i18n="label_lastname">Nom *</label>
+              <input id="lastname" name="lastname" type="text" required />
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="company" data-i18n="label_company">Entreprise *</label>
+            <input id="company" name="company" type="text" required />
+          </div>
+
+          <fieldset class="field field-radios">
+            <legend data-i18n="label_need">Votre besoin principal *</legend>
+            <label class="radio">
+              <input type="radio" name="need" value="structurer" required />
+              <span data-i18n="need_structurer">Structurer mes données</span>
+            </label>
+            <label class="radio">
+              <input type="radio" name="need" value="dashboard" />
+              <span data-i18n="need_dashboard">Créer un dashboard</span>
+            </label>
+            <label class="radio">
+              <input type="radio" name="need" value="indecis" />
+              <span data-i18n="need_indecis">Je ne sais pas encore</span>
+            </label>
+          </fieldset>
+
+          <div class="field">
+            <label for="contact-info" data-i18n="label_contact">Email ou téléphone *</label>
+            <input id="contact-info" name="contact" type="text" required />
+          </div>
+
+          <div class="field">
+            <label for="message" data-i18n-html="label_message_html">Message <span class="field-optional">(optionnel)</span></label>
+            <textarea id="message" name="message" rows="4" placeholder="Décrivez brièvement votre contexte ou votre besoin." data-i18n-placeholder="placeholder_message"></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block" data-i18n="submit_button">Envoyer ma demande</button>
+        </form>
+
+        <p class="alt-cta" data-i18n-html="alt_cta_html">
+          Ou <a href="https://cal.eu/antoniolaise" target="_blank" rel="noopener" class="link">prenez directement RDV →</a>
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-block">
+        <p class="footer-brand">Antonio Laisé</p>
+        <p data-i18n="footer_location">Hanovre · France &amp; Allemagne</p>
+      </div>
+      <div class="footer-block">
+        <p><a href="mailto:antonio.laise.pro@gmail.com" class="link">antonio.laise.pro@gmail.com</a></p>
+        <p><a href="https://antonio-laise.netlify.app/" target="_blank" rel="noopener" class="link">antonio-laise.netlify.app</a></p>
+      </div>
+      <div class="footer-block">
+        <p><a href="#" class="link" data-modal="mentions" data-i18n="footer_mentions">Mentions légales</a></p>
+        <p><a href="#" class="link" data-modal="privacy" data-i18n="footer_privacy">Politique de confidentialité</a></p>
       </div>
     </div>
-  </section>
-
-  <!-- ============================================================== -->
-  <!-- DÉMO LIVE                                                       -->
-  <!-- ============================================================== -->
-  <section id="demo" class="section section-alt">
-    <div class="container demo-grid">
-      <div class="reveal">
-        <div class="live-tag"><span class="live-dot"></span>Live · Streamlit Cloud</div>
-        <h2 class="section-title">Un dashboard de production, en conditions réelles.</h2>
-        <p class="lead-sm">Manipulez la démo ci-dessous. C'est exactement l'outil qui tourne aujourd'hui sur les écrans d'un site industriel européen — secteur câblage.</p>
-
-        <dl class="specs">
-          <div class="spec-row"><dt>Source</dt><dd>Google Sheets API</dd></div>
-          <div class="spec-row"><dt>Rafraîchissement</dt><dd>30 secondes</dd></div>
-          <div class="spec-row"><dt>Stack</dt><dd>Python · Streamlit</dd></div>
-          <div class="spec-row"><dt>Langues</dt><dd>EN / DE</dd></div>
-        </dl>
-
-        <a href="https://demo-industrial-dashboard-sheets.streamlit.app/" target="_blank" rel="noopener" class="btn btn-link">Ouvrir en plein écran ↗</a>
-      </div>
-
-      <div class="iframe-wrap reveal">
-        <div class="iframe-bar">
-          <div class="dots"><span></span><span></span><span></span></div>
-          <div class="url">demo-industrial-dashboard-sheets.streamlit.app</div>
-        </div>
-        <div class="iframe-mobile-fallback">
-          <p>La démo interactive est optimisée pour grand écran.</p>
-          <a href="https://demo-industrial-dashboard-sheets.streamlit.app/" target="_blank" rel="noopener" class="btn btn-primary">Ouvrir la démo dans un nouvel onglet</a>
-        </div>
-        <iframe
-          src="https://demo-industrial-dashboard-sheets.streamlit.app/?embed=true"
-          loading="lazy"
-          allow="fullscreen"
-          referrerpolicy="no-referrer"
-          title="Dashboard de production industrielle — démo live"></iframe>
-      </div>
+    <div class="container footer-bottom">
+      <p data-i18n="footer_copyright">© 2026 Antonio Laisé. Tous droits réservés.</p>
     </div>
-  </section>
+  </footer>
 
-  <!-- ============================================================== -->
-  <!-- CAS CLIENT                                                      -->
-  <!-- ============================================================== -->
-  <section id="cas" class="section">
-    <div class="container case-grid">
-      <div class="reveal">
-        <p class="eyebrow">Cas client · 2024–2025</p>
-        <h2 class="section-title">Grand groupe industriel<br />— site câblage, Europe.</h2>
-        <p class="lead-sm">Site de production multi-lignes, ~250 opérateurs. Réunion qualité quotidienne à 8h30. La donnée existait, mais arrivait trop tard pour piloter la journée.</p>
+  <!-- Modales légales -->
+  <div class="modal" id="modal-mentions" hidden>
+    <div class="modal-inner">
+      <button class="modal-close" data-close aria-label="Fermer">×</button>
+      <h2 data-i18n="modal_mentions_title">Mentions légales</h2>
 
-        <div class="tags">
-          <span class="tag">Secteur câblage</span>
-          <span class="tag">~250 personnes</span>
-          <span class="tag">Multi-lignes</span>
-          <span class="tag">Production continue</span>
-        </div>
+      <h3 data-i18n="modal_mentions_h1">Éditeur du site</h3>
+      <p data-i18n-html="modal_mentions_editor_html">
+        Antonio Laisé<br />
+        Conseil indépendant en structuration de données et dashboards sur-mesure<br />
+        Hanovre, Allemagne<br />
+        Contact : <a href="mailto:antonio.laise.pro@gmail.com" class="link">antonio.laise.pro@gmail.com</a>
+      </p>
+      <p class="modal-placeholder" data-i18n="modal_mentions_placeholder">
+        [À COMPLÉTER : statut juridique (micro-entrepreneur / Freiberufler / autre), numéro SIRET ou Steuernummer, adresse professionnelle si différente]
+      </p>
 
-        <div class="narrative">
-          <div>
-            <p class="narr-h">Demande</p>
-            <p class="narr-b">Remplacer un tableau papier hebdomadaire par un pilotage temps réel, lisible par l'atelier et par la direction.</p>
-          </div>
-          <div>
-            <p class="narr-h">Solution livrée</p>
-            <p class="narr-b">Dashboard Streamlit branché sur Google Sheets, diffusé sur 4 écrans d'atelier. KPIs production, qualité, logistique, absences. Bilingue EN/DE.</p>
-          </div>
-        </div>
-      </div>
+      <h3 data-i18n="modal_mentions_h2">Directeur de publication</h3>
+      <p data-i18n="modal_mentions_director">Antonio Laisé</p>
 
-      <div class="results reveal">
-        <div class="result feature">
-          <p class="lbl">Délai de mise en production</p>
-          <p class="val"><em>3</em><span class="unit">semaines</span></p>
-          <p class="sub">De la première réunion d'audit à la diffusion sur les écrans d'atelier.</p>
-        </div>
-        <div class="result">
-          <p class="lbl">Réunion qualité</p>
-          <p class="val">−40<span class="unit">%</span></p>
-          <p class="sub">Durée moyenne du daily, donnée déjà partagée à l'écran.</p>
-        </div>
-        <div class="result">
-          <p class="lbl">Refresh donnée</p>
-          <p class="val">30<span class="unit">s</span></p>
-          <p class="sub">Au lieu d'un cycle hebdomadaire papier.</p>
-        </div>
-      </div>
+      <h3 data-i18n="modal_mentions_h3">Hébergeur</h3>
+      <p data-i18n-html="modal_mentions_host_html">
+        Netlify, Inc.<br />
+        512 2nd Street, Suite 200, San Francisco, CA 94107, États-Unis<br />
+        <a href="https://www.netlify.com" target="_blank" rel="noopener" class="link">www.netlify.com</a>
+      </p>
+
+      <h3 data-i18n="modal_mentions_h4">Propriété intellectuelle</h3>
+      <p data-i18n="modal_mentions_ip">
+        L'ensemble du contenu de ce site (textes, images, captures d'écran, code) est la propriété d'Antonio Laisé,
+        sauf mention contraire. Toute reproduction sans autorisation préalable est interdite.
+      </p>
+
+      <h3 data-i18n="modal_mentions_h5">Crédits</h3>
+      <p data-i18n-html="modal_mentions_credits_html">
+        Site développé par Antonio Laisé en HTML, CSS et JavaScript.<br />
+        Polices : Inter et JetBrains Mono (Google Fonts).
+      </p>
     </div>
-  </section>
-
-  <!-- ============================================================== -->
-  <!-- MÉTHODE                                                         -->
-  <!-- ============================================================== -->
-  <section id="methode" class="section section-alt">
-    <div class="container">
-      <div class="section-head reveal">
-        <p class="eyebrow">Méthode</p>
-        <h2 class="section-title">Trois étapes, six à huit semaines, zéro chantier informatique lourd.</h2>
-      </div>
-
-      <div class="method-grid">
-        <div class="method-step reveal">
-          <p class="step-num">ÉTAPE 01</p>
-          <h3>Audit terrain</h3>
-          <p class="when">Semaine 1 · 2 jours sur site</p>
-          <p class="desc">Visite d'atelier, entretiens avec production / qualité / logistique. Identification des KPIs prioritaires et des sources de données réelles.</p>
-          <div class="deliv">
-            <p class="deliv-h">Livrable</p>
-            <p class="deliv-b">Cahier des charges visuel, 3 maquettes proposées.</p>
-          </div>
-        </div>
-
-        <div class="method-step reveal">
-          <p class="step-num">ÉTAPE 02</p>
-          <h3>Prototype</h3>
-          <p class="when">Semaines 2 à 4 · à distance</p>
-          <p class="desc">Première version fonctionnelle livrée sous 2 semaines, branchée sur vos vraies données. Itérations courtes, validation hebdomadaire.</p>
-          <div class="deliv">
-            <p class="deliv-h">Livrable</p>
-            <p class="deliv-b">Dashboard manipulable, accessible par URL privée.</p>
-          </div>
-        </div>
-
-        <div class="method-step reveal">
-          <p class="step-num">ÉTAPE 03</p>
-          <h3>Mise en production</h3>
-          <p class="when">Semaines 5 à 8 · sur site</p>
-          <p class="desc">Déploiement final sur écrans d'atelier, formation des utilisateurs clés, documentation et transfert de maintenance.</p>
-          <div class="deliv">
-            <p class="deliv-h">Livrable</p>
-            <p class="deliv-b">Outil en production · doc complète · 1 mois de support.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================================== -->
-  <!-- STACK & PARCOURS                                                -->
-  <!-- ============================================================== -->
-  <section id="parcours" class="section">
-    <div class="container stack-grid">
-      <div class="bio reveal">
-        <p class="eyebrow">Pourquoi moi</p>
-        <h2 class="section-title">Ingénieur d'atelier qui code ses outils.</h2>
-        <p class="lead-sm">Formation ingénieur mécanique UTC Compiègne, spécialité Data &amp; Fiabilité. Je suis passé par des sites de production avant d'écrire la première ligne de Python — la donnée industrielle se conçoit en chaussures de sécurité.</p>
-
-        <dl class="creds">
-          <div class="cred-row">
-            <dt>2024 — 2025</dt>
-            <dd>Optimisation procédés &amp; dashboards production<br /><span class="dim">Site industriel européen, secteur câblage</span></dd>
-          </div>
-          <div class="cred-row">
-            <dt>2023</dt>
-            <dd>Génie civil nucléaire<br /><span class="dim">Groupe énergétique français</span></dd>
-          </div>
-          <div class="cred-row">
-            <dt>2020 — 2023</dt>
-            <dd>UTC Compiègne — Ingénieur mécanique<br /><span class="dim">Spécialité Data, fiabilité, lean industriel</span></dd>
-          </div>
-          <div class="cred-row">
-            <dt>2026 —</dt>
-            <dd>Consultant indépendant<br /><span class="dim">Hanovre — interventions FR / DE / EN</span></dd>
-          </div>
-        </dl>
-      </div>
-
-      <div class="stack-cats reveal">
-        <div class="stack-cat">
-          <p class="stack-h">Data &amp; analyse</p>
-          <div class="chips">
-            <span class="chip primary">Python</span>
-            <span class="chip primary">Pandas</span>
-            <span class="chip">NumPy</span>
-            <span class="chip">SQL</span>
-            <span class="chip">Jupyter</span>
-          </div>
-        </div>
-        <div class="stack-cat">
-          <p class="stack-h">Dashboards &amp; visualisation</p>
-          <div class="chips">
-            <span class="chip primary">Streamlit</span>
-            <span class="chip primary">Plotly</span>
-            <span class="chip">Power BI</span>
-            <span class="chip">Looker Studio</span>
-            <span class="chip">Grafana</span>
-          </div>
-        </div>
-        <div class="stack-cat">
-          <p class="stack-h">Sources &amp; intégrations</p>
-          <div class="chips">
-            <span class="chip">Google Sheets API</span>
-            <span class="chip">REST / Webhooks</span>
-            <span class="chip">CSV · XLSX</span>
-            <span class="chip">PostgreSQL</span>
-            <span class="chip">OPC UA <span class="dim">(en cours)</span></span>
-          </div>
-        </div>
-        <div class="stack-cat">
-          <p class="stack-h">Approche métier</p>
-          <div class="chips">
-            <span class="chip">Lean manufacturing</span>
-            <span class="chip">Fiabilité (UTC)</span>
-            <span class="chip">Daily management</span>
-            <span class="chip">Conformité RGPD</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================================== -->
-  <!-- TARIFS                                                          -->
-  <!-- ============================================================== -->
-  <section id="tarifs" class="section section-alt">
-    <div class="container">
-      <div class="section-head reveal">
-        <p class="eyebrow">Tarifs indicatifs</p>
-        <h2 class="section-title">Trois formats, un engagement&nbsp;: une donnée utile sous deux semaines.</h2>
-      </div>
-
-      <div class="pricing-grid">
-        <article class="price-card reveal">
-          <span class="badge">Découverte</span>
-          <h3 class="price-name">Audit data atelier</h3>
-          <p class="who">Pour comprendre ce qui peut être piloté, avant d'investir dans un outil.</p>
-          <hr class="hline" />
-          <p class="amount"><span class="pre">à partir de</span>2 400<span class="post">€ HT</span></p>
-          <p class="delay">1 semaine · 2 jours sur site</p>
-          <ul>
-            <li>Visite d'atelier et entretiens</li>
-            <li>Cartographie des sources de données</li>
-            <li>Note de cadrage + maquettes</li>
-          </ul>
-        </article>
-
-        <article class="price-card feature reveal">
-          <span class="badge">Le plus demandé</span>
-          <h3 class="price-name">Dashboard sur mesure</h3>
-          <p class="who">Un tableau de bord temps réel branché sur vos données, en production sous 6 semaines.</p>
-          <hr class="hline" />
-          <p class="amount"><span class="pre">à partir de</span>9 800<span class="post">€ HT</span></p>
-          <p class="delay">4 à 6 semaines</p>
-          <ul>
-            <li>Audit + prototype + déploiement</li>
-            <li>Multilingue, diffusion atelier</li>
-            <li>Formation utilisateurs + 1 mois de support</li>
-          </ul>
-        </article>
-
-        <article class="price-card reveal">
-          <span class="badge">Long terme</span>
-          <h3 class="price-name">Suivi &amp; évolution</h3>
-          <p class="who">Pour faire évoluer le dashboard au rythme de votre site, sans recruter.</p>
-          <hr class="hline" />
-          <p class="amount"><span class="pre">à partir de</span>650<span class="post">€ HT / mois</span></p>
-          <p class="delay">Engagement 6 mois renouvelable</p>
-          <ul>
-            <li>Évolutions fonctionnelles mensuelles</li>
-            <li>Monitoring et corrections</li>
-            <li>Point de revue trimestriel</li>
-          </ul>
-        </article>
-      </div>
-
-      <p class="price-foot">Tarifs indicatifs hors taxes. Chaque mission fait l'objet d'un devis ajusté à la complexité des sources de données et au périmètre fonctionnel. Échange initial de 30 minutes toujours offert.</p>
-    </div>
-  </section>
-
-  <!-- ============================================================== -->
-  <!-- CONTACT                                                         -->
-  <!-- ============================================================== -->
-  <section id="contact" class="section">
-    <div class="container contact-grid">
-      <div class="reveal">
-        <p class="eyebrow">Prochaine étape</p>
-        <h2 class="display-sm">Trente minutes,<br />et <em>vos premiers</em> KPIs sur la table.</h2>
-        <p class="lead-sm">Échange initial gratuit. On regarde ensemble vos sources de données actuelles et on identifie les deux ou trois indicateurs qui changeraient votre lundi matin.</p>
-
-        <div class="hero-cta">
-          <a href="#" class="btn btn-primary">Réserver 30 minutes</a>
-          <a href="mailto:antonio.laise.pro@gmail.com" class="btn">Envoyer un e-mail</a>
-        </div>
-      </div>
-
-      <aside class="channels reveal">
-        <div class="ch-row">
-          <p class="ch-lbl">E-mail</p>
-          <p class="ch-val"><a href="mailto:antonio.laise.pro@gmail.com">antonio.laise.pro@gmail.com</a><span class="ch-sm">Réponse sous 48h ouvrées</span></p>
-        </div>
-        <div class="ch-row">
-          <p class="ch-lbl">Calendly</p>
-          <p class="ch-val"><a href="#">calendly.com/antonio-laise</a><span class="ch-sm">30 min, fuseau Europe centrale · lien à venir</span></p>
-        </div>
-        <div class="ch-row">
-          <p class="ch-lbl">LinkedIn</p>
-          <p class="ch-val"><a href="https://www.linkedin.com/in/lais%C3%A9-antonio/" target="_blank" rel="noopener">/in/laisé-antonio</a><span class="ch-sm">Connexion bienvenue</span></p>
-        </div>
-        <div class="ch-row">
-          <p class="ch-lbl">Basé à</p>
-          <p class="ch-val">Hanovre, Allemagne<span class="ch-sm">Déplacements Europe sur demande</span></p>
-        </div>
-      </aside>
-    </div>
-  </section>
-
-</main>
-
-<!-- ============================================================== -->
-<!-- FOOTER                                                          -->
-<!-- ============================================================== -->
-<footer class="footer">
-  <div class="container footer-inner">
-    <div class="footer-brand">
-      <span class="mark"></span>
-      <span>Antonio Laisé Consulting</span>
-    </div>
-    <p class="footer-meta">Beta · Mai 2026 · Hanovre, Allemagne</p>
-    <nav class="footer-nav">
-      <a href="#offre">Offre</a>
-      <a href="#demo">Démo</a>
-      <a href="#cas">Cas client</a>
-      <a href="#methode">Méthode</a>
-      <a href="#tarifs">Tarifs</a>
-      <a href="#contact">Contact</a>
-    </nav>
   </div>
-</footer>
 
-<script src="main.js"></script>
+  <div class="modal" id="modal-privacy" hidden>
+    <div class="modal-inner">
+      <button class="modal-close" data-close aria-label="Fermer">×</button>
+      <h2 data-i18n="modal_privacy_title">Politique de confidentialité</h2>
+
+      <p data-i18n="modal_privacy_intro">
+        Cette politique décrit les données personnelles collectées sur ce site, leur finalité, leur durée
+        de conservation et vos droits, conformément au Règlement Général sur la Protection des Données (RGPD).
+      </p>
+
+      <h3 data-i18n="modal_privacy_h1">Données collectées via le formulaire de contact</h3>
+      <p data-i18n="modal_privacy_form_intro">
+        Lorsque vous remplissez le formulaire de contact, les informations suivantes sont collectées :
+      </p>
+      <ul>
+        <li data-i18n="modal_privacy_form_li1">Prénom et nom</li>
+        <li data-i18n="modal_privacy_form_li2">Nom de votre entreprise</li>
+        <li data-i18n="modal_privacy_form_li3">Email ou numéro de téléphone</li>
+        <li data-i18n="modal_privacy_form_li4">Nature de votre besoin (structurer mes données, créer un dashboard, indécis)</li>
+        <li data-i18n="modal_privacy_form_li5">Message libre (optionnel)</li>
+      </ul>
+      <p data-i18n-html="modal_privacy_purpose_html">
+        <strong>Finalité</strong> : traiter votre demande de contact et vous recontacter sous 24 heures ouvrées.<br />
+        <strong>Base légale</strong> : votre consentement explicite (envoi volontaire du formulaire).<br />
+        <strong>Durée de conservation</strong> : 12 mois à compter de votre dernier contact, sauf relation commerciale active.
+      </p>
+
+      <h3 data-i18n="modal_privacy_h2">Sous-traitant : Netlify Forms</h3>
+      <p data-i18n="modal_privacy_netlify">
+        Les soumissions du formulaire sont traitées et stockées par Netlify, Inc. (États-Unis) via leur service Netlify Forms.
+        Netlify est certifié conforme au cadre Data Privacy Framework UE-États-Unis.
+      </p>
+
+      <h3 data-i18n="modal_privacy_h3">Mesure d'audience (Umami)</h3>
+      <p class="modal-placeholder" data-i18n="modal_privacy_umami_placeholder">
+        [À ACTIVER quand Umami sera intégré]
+      </p>
+      <p data-i18n="modal_privacy_umami">
+        Ce site utilise Umami, un service de mesure d'audience respectueux de la vie privée.
+        Umami ne dépose aucun cookie, ne suit pas les utilisateurs entre les sites et ne collecte aucune
+        donnée personnelle identifiable (pas d'adresse IP stockée en clair, pas de profil de navigation).
+      </p>
+
+      <h3 data-i18n="modal_privacy_h4">Cookies</h3>
+      <p data-i18n="modal_privacy_cookies">
+        Ce site n'utilise aucun cookie de suivi ou publicitaire. Aucun consentement préalable n'est donc requis.
+      </p>
+
+      <h3 data-i18n="modal_privacy_h5">Vos droits</h3>
+      <p data-i18n-html="modal_privacy_rights_html">
+        Conformément au RGPD, vous disposez d'un droit d'accès, de rectification, d'effacement, de portabilité
+        et d'opposition concernant vos données. Pour exercer ces droits, contactez-moi par email à
+        <a href="mailto:antonio.laise.pro@gmail.com" class="link">antonio.laise.pro@gmail.com</a>.
+      </p>
+      <p data-i18n="modal_privacy_cnil">
+        Vous pouvez également introduire une réclamation auprès de la CNIL (France) ou du BfDI (Allemagne) si vous
+        estimez que vos droits ne sont pas respectés.
+      </p>
+
+      <h3 data-i18n="modal_privacy_h6">Mise à jour</h3>
+      <p data-i18n="modal_privacy_update">Cette politique peut être mise à jour. La date de dernière mise à jour : mai 2026.</p>
+    </div>
+  </div>
+
+  <!-- Lightbox dashboard captures -->
+  <div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="Capture agrandie">
+    <button class="lightbox-btn lightbox-close" type="button" aria-label="Fermer">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <button class="lightbox-btn lightbox-prev" type="button" aria-label="Capture précédente">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m15 6-6 6 6 6"/></svg>
+    </button>
+    <button class="lightbox-btn lightbox-next" type="button" aria-label="Capture suivante">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg>
+    </button>
+    <figure class="lightbox-content">
+      <img class="lightbox-image" alt="" />
+      <figcaption class="lightbox-caption"></figcaption>
+    </figure>
+    <span class="lightbox-counter"></span>
+  </div>
+
+  <script src="i18n.js?v=1"></script>
+  <script src="main.js?v=2"></script>
 </body>
 </html>
