@@ -684,6 +684,14 @@ a:hover { color: var(--c-primary-dark); }
   font-style: italic;
   max-width: 700px;
 }
+.solution-drill {
+  text-align: center;
+  margin: 30px auto 0;
+  max-width: 760px;
+  font-size: 15px;
+  color: var(--c-text-muted);
+}
+.solution-drill strong { color: var(--c-text); font-weight: 700; }
 
 @media (max-width: 700px) {
   .compare-block {
