@@ -120,20 +120,26 @@
               <span class="mac-dot red"></span>
               <span class="mac-dot yellow"></span>
               <span class="mac-dot green"></span>
-              <span class="sheet-titlebar-title">Project_Tracking.xlsx</span>
+              <span class="sheet-titlebar-title" data-i18n="sheet_file">Project_Tracking.xlsx</span>
             </div>
             <table class="sheet-grid">
               <thead>
                 <tr><th></th><th>A</th><th>B</th></tr>
               </thead>
               <tbody>
-                <tr><th>1</th><td>Date_Start</td><td class="sheet-num">01/01/2026</td></tr>
-                <tr><th>2</th><td>Date_End_Plan</td><td class="sheet-num">30/06/2026</td></tr>
-                <tr><th>3</th><td>Date_End_Est</td><td class="sheet-num">15/07/2026</td></tr>
-                <tr><th>4</th><td>Tasks_Total</td><td class="sheet-num">50</td></tr>
-                <tr><th>5</th><td>Tasks_Done</td><td class="sheet-num">36</td></tr>
+                <tr><th>1</th><td data-i18n="sheet_r1">Date_Start</td><td class="sheet-num">01/01/2026</td></tr>
+                <tr><th>2</th><td data-i18n="sheet_r2">Date_End_Plan</td><td class="sheet-num">30/06/2026</td></tr>
+                <tr><th>3</th><td data-i18n="sheet_r3">Date_End_Est</td><td class="sheet-num">15/07/2026</td></tr>
+                <tr><th>4</th><td data-i18n="sheet_r4">Tasks_Total</td><td class="sheet-num">50</td></tr>
+                <tr><th>5</th><td data-i18n="sheet_r5">Tasks_Done</td><td class="sheet-num">36</td></tr>
               </tbody>
             </table>
+          </div>
+
+          <!-- Flèche de transformation -->
+          <div class="compare-arrow" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M4 12h13M12 6l6 6-6 6" stroke="#2163CA" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span data-i18n="compare_arrow_label">Calculé automatiquement</span>
           </div>
 
           <!-- Carte PROGRESS du dashboard -->
@@ -151,11 +157,7 @@
               </div>
               <div class="kpi-footer">
                 <div class="kpi-stat">
-                  <div class="kpi-stat-value">0.89</div>
-                  <div class="kpi-stat-label">SPI</div>
-                </div>
-                <div class="kpi-stat">
-                  <div class="kpi-stat-value bad" data-i18n="kpi_value_days_late">-15 days late</div>
+                  <div class="kpi-stat-value bad" data-i18n="kpi_value_days_late">15 days late</div>
                   <div class="kpi-stat-label" data-i18n="kpi_label_days">DAYS VARIANCE</div>
                 </div>
               </div>
@@ -173,6 +175,12 @@
 
         <div class="solution-grid">
           <article class="feature">
+            <div class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h6"/><path d="M14 6h6"/><circle cx="12" cy="6" r="2"/><path d="M4 12h2"/><path d="M10 12h10"/><circle cx="8" cy="12" r="2"/><path d="M4 18h10"/><path d="M18 18h2"/><circle cx="16" cy="18" r="2"/></svg></div>
+            <h3 data-i18n="feature6_title">Conçu sur-mesure pour votre métier</h3>
+            <p data-i18n="feature6_desc">KPIs, visualisations, alertes définis avec vous lors de l'audit. Pas de visuels génériques qui ne correspondent à rien.</p>
+          </article>
+
+          <article class="feature">
             <div class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 0 1-15.6 6.1"/><path d="M3 12A9 9 0 0 1 18.6 5.9"/><path d="M18 3v4h-4"/><path d="M6 21v-4h4"/></svg></div>
             <h3 data-i18n="feature1_title">Connecté en temps réel à vos sources existantes</h3>
             <p data-i18n="feature1_desc">Google Sheets, Excel local, Excel OneDrive / SharePoint, et autres sources sur demande (ERP, bases de données, API). Vous saisissez la donnée brute, le dashboard se met à jour automatiquement.</p>
@@ -182,30 +190,6 @@
             <div class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="8" height="8" rx="1.5"/><rect x="13" y="3" width="8" height="5" rx="1.5"/><rect x="3" y="13" width="8" height="8" rx="1.5"/><rect x="13" y="10" width="8" height="11" rx="1.5"/></svg></div>
             <h3 data-i18n="feature2_title">Template intelligent</h3>
             <p data-i18n="feature2_desc">Vous ne remplissez que les informations manquantes. Tous les calculs (moyennes, ratios, agrégations, alertes) sont faits automatiquement côté serveur.</p>
-          </article>
-
-          <article class="feature">
-            <div class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="14" height="10" rx="1.5"/><path d="M6 18h6"/><path d="M9 14v4"/><rect x="17" y="9" width="5" height="11" rx="1.5"/></svg></div>
-            <h3 data-i18n="feature3_title">Accessible n'importe où, sur n'importe quel écran</h3>
-            <p data-i18n="feature3_desc">Simple lien web protégé, pas d'installation. Fonctionne sur ordinateur, tablette, smartphone, écran TV d'atelier.</p>
-          </article>
-
-          <article class="feature">
-            <div class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3.5 12h17"/><path d="M12 3a14 14 0 0 1 0 18"/><path d="M12 3a14 14 0 0 0 0 18"/></svg></div>
-            <h3 data-i18n="feature4_title">Multi-langue natif</h3>
-            <p data-i18n="feature4_desc">Bascule FR / EN / DE (ou autre langue sur demande) en 1 clic. Idéal pour les TPE et PME internationales ou avec des équipes multi-pays.</p>
-          </article>
-
-          <article class="feature">
-            <div class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="13" rx="1.5"/><path d="M8 21h8"/><path d="M12 17v4"/><path d="m9 8 4 2.5L9 13z" fill="currentColor" stroke="none"/></svg></div>
-            <h3 data-i18n="feature5_title">Mode TV plein écran</h3>
-            <p data-i18n="feature5_desc">Pensé pour l'affichage permanent en open space, atelier ou salle de réunion. Mode sombre disponible pour réduire la fatigue visuelle.</p>
-          </article>
-
-          <article class="feature">
-            <div class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h6"/><path d="M14 6h6"/><circle cx="12" cy="6" r="2"/><path d="M4 12h2"/><path d="M10 12h10"/><circle cx="8" cy="12" r="2"/><path d="M4 18h10"/><path d="M18 18h2"/><circle cx="16" cy="18" r="2"/></svg></div>
-            <h3 data-i18n="feature6_title">Conçu sur-mesure pour votre métier</h3>
-            <p data-i18n="feature6_desc">KPIs, visualisations, alertes définis avec vous lors de l'audit. Pas de visuels génériques qui ne correspondent à rien.</p>
           </article>
 
           <article class="feature">
@@ -224,6 +208,24 @@
             <div class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m7 14 4-5 3 3 5-7"/><path d="M19 5v3h-3"/></svg></div>
             <h3 data-i18n="feature9_title">Historique et tendances</h3>
             <p data-i18n="feature9_desc">Le dashboard enregistre vos indicateurs chaque jour et affiche leur évolution sur 30, 60 ou 90 jours. Vous voyez les tendances de fond, pas seulement l'instantané.</p>
+          </article>
+
+          <article class="feature">
+            <div class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3.5 12h17"/><path d="M12 3a14 14 0 0 1 0 18"/><path d="M12 3a14 14 0 0 0 0 18"/></svg></div>
+            <h3 data-i18n="feature4_title">Multi-langue natif</h3>
+            <p data-i18n="feature4_desc">Bascule FR / EN / DE (ou autre langue sur demande) en 1 clic. Idéal pour les TPE et PME internationales ou avec des équipes multi-pays.</p>
+          </article>
+
+          <article class="feature">
+            <div class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="14" height="10" rx="1.5"/><path d="M6 18h6"/><path d="M9 14v4"/><rect x="17" y="9" width="5" height="11" rx="1.5"/></svg></div>
+            <h3 data-i18n="feature3_title">Accessible n'importe où, sur n'importe quel écran</h3>
+            <p data-i18n="feature3_desc">Simple lien web protégé, pas d'installation. Fonctionne sur ordinateur, tablette, smartphone, écran TV d'atelier.</p>
+          </article>
+
+          <article class="feature">
+            <div class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="13" rx="1.5"/><path d="M8 21h8"/><path d="M12 17v4"/><path d="m9 8 4 2.5L9 13z" fill="currentColor" stroke="none"/></svg></div>
+            <h3 data-i18n="feature5_title">Mode TV plein écran</h3>
+            <p data-i18n="feature5_desc">Pensé pour l'affichage permanent en open space, atelier ou salle de réunion. Mode sombre disponible pour réduire la fatigue visuelle.</p>
           </article>
         </div>
       </div>
