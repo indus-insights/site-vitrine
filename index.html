@@ -30,8 +30,8 @@
   <link rel="stylesheet" href="styles.css?v=2" />
 
   <!-- Umami Analytics (privacy-friendly, sans cookies) -->
-  <!-- TODO : remplacer YOUR_WEBSITE_ID après création sur cloud.umami.is -->
-  <script defer src="https://cloud.umami.is/script.js" data-website-id="YOUR_WEBSITE_ID"></script>
+  <!-- Umami désactivé tant qu'aucun Website n'est créé (cf. politique de confidentialité). Décommenter et remplacer YOUR_WEBSITE_ID pour activer. -->
+  <!-- <script defer src="https://cloud.umami.is/script.js" data-website-id="YOUR_WEBSITE_ID"></script> -->
 </head>
 <body>
 
@@ -569,6 +569,9 @@
           <button type="submit" class="btn btn-primary btn-block" data-i18n="submit_button">Envoyer ma demande</button>
         </form>
 
+        <p id="form-success" data-i18n="contact_success" hidden style="margin-top:18px;padding:14px 16px;border-radius:10px;background:#eaf7ef;border:1px solid #bfe6cd;color:#1f7a3d;font-weight:600;">Merci, votre demande a bien été envoyée. Je reviens vers vous sous 24 heures ouvrées.</p>
+        <p id="form-error" data-i18n="contact_error" hidden style="margin-top:14px;padding:12px 16px;border-radius:10px;background:#fdeeee;border:1px solid #f3c9c9;color:#b3322c;">Une erreur est survenue lors de l'envoi. Réessayez, ou écrivez-moi directement par email.</p>
+
         <p class="alt-cta" data-i18n-html="alt_cta_html">
           Ou <a href="https://cal.eu/antoniolaise" target="_blank" rel="noopener" class="link">prenez directement RDV →</a>
         </p>
@@ -611,8 +614,8 @@
         Hanovre, Allemagne<br />
         Contact : <a href="mailto:antonio.laise.pro@gmail.com" class="link">antonio.laise.pro@gmail.com</a>
       </p>
-      <p class="modal-placeholder" data-i18n="modal_mentions_placeholder">
-        [À COMPLÉTER : statut juridique (micro-entrepreneur / Freiberufler / autre), numéro SIRET ou Steuernummer, adresse professionnelle si différente]
+      <p data-i18n="modal_mentions_placeholder">
+        Statut juridique en cours de constitution. La forme juridique, le numéro d'immatriculation (SIRET ou Steuernummer) et l'adresse professionnelle seront ajoutés dès la finalisation de la structure.
       </p>
 
       <h3 data-i18n="modal_mentions_h2">Directeur de publication</h3>
@@ -672,14 +675,9 @@
         Netlify est certifié conforme au cadre Data Privacy Framework UE-États-Unis.
       </p>
 
-      <h3 data-i18n="modal_privacy_h3">Mesure d'audience (Umami)</h3>
-      <p class="modal-placeholder" data-i18n="modal_privacy_umami_placeholder">
-        [À ACTIVER quand Umami sera intégré]
-      </p>
+      <h3 data-i18n="modal_privacy_h3">Mesure d'audience</h3>
       <p data-i18n="modal_privacy_umami">
-        Ce site utilise Umami, un service de mesure d'audience respectueux de la vie privée.
-        Umami ne dépose aucun cookie, ne suit pas les utilisateurs entre les sites et ne collecte aucune
-        donnée personnelle identifiable (pas d'adresse IP stockée en clair, pas de profil de navigation).
+        Aucun outil de mesure d'audience n'est actuellement actif sur ce site. Si un outil respectueux de la vie privée (sans cookie ni donnée personnelle identifiable) est ajouté à l'avenir, cette politique sera mise à jour.
       </p>
 
       <h3 data-i18n="modal_privacy_h4">Cookies</h3>

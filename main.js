@@ -178,4 +178,35 @@
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') closeAllModals();
   });
+
+  /* ---------- Formulaire de contact (Netlify Forms, envoi AJAX + confirmation) ---------- */
+  const cform = document.querySelector('form.contact-form');
+  if (cform) {
+    const successEl = document.getElementById('form-success');
+    const errorEl = document.getElementById('form-error');
+    const btn = cform.querySelector('button[type="submit"]');
+    cform.addEventListener('submit', (e) => {
+      e.preventDefault();
+      if (errorEl) errorEl.hidden = true;
+      if (btn) btn.disabled = true;
+      const body = new URLSearchParams(new FormData(cform)).toString();
+      fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: body,
+      })
+        .then((res) => {
+          if (!res.ok) throw new Error('bad status ' + res.status);
+          cform.hidden = true;
+          if (successEl) {
+            successEl.hidden = false;
+            successEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }
+        })
+        .catch(() => {
+          if (btn) btn.disabled = false;
+          if (errorEl) errorEl.hidden = false;
+        });
+    });
+  }
 })();
