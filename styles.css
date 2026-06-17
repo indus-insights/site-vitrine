@@ -6,7 +6,7 @@
 
 /* ---------- Reset ---------- */
 *, *::before, *::after { box-sizing: border-box; }
-html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+html { scroll-behavior: smooth; scroll-padding-top: 76px; -webkit-text-size-adjust: 100%; }
 body, h1, h2, h3, h4, p, ul, ol, fieldset, figure, blockquote, form { margin: 0; padding: 0; }
 ul, ol { list-style: none; }
 img, svg { display: block; max-width: 100%; }
@@ -136,7 +136,7 @@ a:hover { color: var(--c-primary-dark); }
   width: 100%;
   max-width: var(--container);
   margin: 0 auto;
-  padding: 0 var(--s-5);
+  padding: 0 var(--s-6);
 }
 @media (min-width: 720px) {
   .container { padding: 0 var(--s-6); }
