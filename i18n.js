@@ -22,6 +22,7 @@
       nav_tarifs: "Tarifs",
       nav_apropos: "À propos",
       header_cta: "Échangeons 30 min",
+      header_cta_mini: "Contact",
       lang_alt: "EN",
 
       // Hero
@@ -243,6 +244,7 @@
       nav_tarifs: "Pricing",
       nav_apropos: "About",
       header_cta: "Let's talk 30 min",
+      header_cta_mini: "Contact",
       lang_alt: "FR",
 
       // Hero

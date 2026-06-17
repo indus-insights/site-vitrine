@@ -136,7 +136,7 @@ a:hover { color: var(--c-primary-dark); }
   width: 100%;
   max-width: var(--container);
   margin: 0 auto;
-  padding: 0 var(--s-5);
+  padding: 0 var(--s-6);
 }
 @media (min-width: 720px) {
   .container { padding: 0 var(--s-6); }
@@ -162,7 +162,7 @@ a:hover { color: var(--c-primary-dark); }
   align-items: center;
   justify-content: space-between;
   gap: var(--s-5);
-  padding: var(--s-4) 0;
+  padding-block: var(--s-4);
 }
 .brand {
   display: inline-flex;
@@ -223,8 +223,13 @@ a:hover { color: var(--c-primary-dark); }
 }
 
 @media (min-width: 960px) { .nav { display: inline-flex; } }
-/* Sur petit écran, le CTA du header est masqué (le hero porte déjà le CTA principal) pour éviter que les blocs débordent sur les côtés */
-@media (max-width: 599px) { .site-header .btn-primary { display: none; } }
+/* Le CTA du header passe en version courte "Contact" sur petit écran, pour tenir avec de la marge sur les côtés */
+.header-cta .cta-mini { display: none; }
+@media (max-width: 599px) {
+  .header-cta .cta-full { display: none; }
+  .header-cta .cta-mini { display: inline; }
+  .header-inner { gap: var(--s-3); }
+}
 
 /* ---------- Buttons ---------- */
 .btn {
