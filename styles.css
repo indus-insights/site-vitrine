@@ -136,7 +136,7 @@ a:hover { color: var(--c-primary-dark); }
   width: 100%;
   max-width: var(--container);
   margin: 0 auto;
-  padding: 0 var(--s-6);
+  padding: 0 var(--s-5);
 }
 @media (min-width: 720px) {
   .container { padding: 0 var(--s-6); }
@@ -223,6 +223,8 @@ a:hover { color: var(--c-primary-dark); }
 }
 
 @media (min-width: 960px) { .nav { display: inline-flex; } }
+/* Sur petit écran, le CTA du header est masqué (le hero porte déjà le CTA principal) pour éviter que les blocs débordent sur les côtés */
+@media (max-width: 599px) { .site-header .btn-primary { display: none; } }
 
 /* ---------- Buttons ---------- */
 .btn {
