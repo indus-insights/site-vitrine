@@ -514,6 +514,18 @@
         <p class="body-text" data-i18n="contact_body">Décrivez votre besoin en quelques mots. Je reviens vers vous sous 24 heures ouvrées pour caler un échange.</p>
         <p class="body-text" data-i18n="contact_brochure" style="font-weight:600">Vous voulez plus de détails sur mon offre ? Une brochure complète est disponible sur simple demande.</p>
 
+        <!-- Formulaire statique caché : sert uniquement à la détection Netlify Forms au déploiement. Le formulaire visible ci-dessous envoie en AJAX (form-name=contact). -->
+        <form name="contact" data-netlify="true" netlify-honeypot="bot-field" hidden aria-hidden="true">
+          <input type="hidden" name="form-name" value="contact" />
+          <input type="text" name="firstname" />
+          <input type="text" name="lastname" />
+          <input type="text" name="company" />
+          <input type="text" name="need" />
+          <input type="text" name="contact" />
+          <textarea name="message"></textarea>
+          <input name="bot-field" />
+        </form>
+
         <form
           class="contact-form"
           name="contact"
