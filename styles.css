@@ -501,6 +501,33 @@ a:hover { color: var(--c-primary-dark); }
 .feature h3 { margin: 0; }
 .feature p { color: var(--c-text-muted); font-size: 0.95rem; margin: 0; }
 
+/* Carte IA mise en valeur : pleine largeur, en tête de grille (order:-1) */
+.feature-ai {
+  order: -1;
+  grid-column: 1 / -1;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--s-5);
+  border-color: var(--c-primary);
+  background: linear-gradient(120deg, var(--c-primary-tint) 0%, #fff 62%);
+}
+.feature-ai .feature-icon { width: 54px; height: 54px; flex-shrink: 0; }
+.feature-ai .feature-icon svg { width: 30px; height: 30px; }
+.feature-ai-body { display: flex; flex-direction: column; gap: var(--s-2); }
+.feature-badge {
+  display: inline-block;
+  align-self: flex-start;
+  background: var(--c-primary);
+  color: #fff;
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  padding: 3px 9px;
+  border-radius: 999px;
+}
+@media (max-width: 560px) { .feature-ai { flex-direction: column; align-items: flex-start; } }
+
 @media (min-width: 720px) { .solution-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (min-width: 1024px) {
   /* 9 cards en grille 3x3 */
@@ -963,8 +990,7 @@ a:hover { color: var(--c-primary-dark); }
   box-shadow: 0 0 0 1px var(--c-primary), 0 12px 32px -16px rgba(33, 99, 202, 0.3);
   position: relative;
 }
-.price-card-featured::before {
-  content: "Recommandé";
+.price-badge {
   position: absolute;
   top: -10px;
   right: var(--s-5);
@@ -1032,6 +1058,21 @@ a:hover { color: var(--c-primary-dark); }
   margin-top: 0.5rem;
 }
 .notice strong { color: var(--c-text); font-weight: 600; }
+
+/* Tarifs : sous-titres, grille 2 colonnes, options et mention TVA */
+.pricing-subtitle {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--c-text-soft);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin: var(--s-6) 0 var(--s-3);
+}
+.pricing-grid.cols-2 { max-width: 760px; margin-left: auto; margin-right: auto; }
+.price-options { font-size: 0.85rem; color: var(--c-text-soft); margin-top: var(--s-2); }
+.tax-note { margin-top: var(--s-3); font-size: 0.82rem; color: var(--c-text-muted); }
+@media (min-width: 1024px) { .pricing-grid.cols-2 { grid-template-columns: repeat(2, 1fr); } }
 
 /* ---------- About ---------- */
 .about-grid {
