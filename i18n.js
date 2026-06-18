@@ -12,7 +12,7 @@
     fr: {
       // Meta
       meta_title: "Antonio Laisé · Conseil en données et pilotage pour TPE et PME",
-      meta_description: "Conseil indépendant pour transformer des données éparpillées en un pilotage clair de l'activité. Diagnostic, structuration et dashboards sur-mesure connectés à vos fichiers. Par Antonio Laisé, ingénieur data & fiabilité, Hanovre.",
+      meta_description: "Conseil indépendant pour transformer des données éparpillées en un pilotage clair de l'activité. Diagnostic, structuration et dashboards sur mesure connectés à vos fichiers. Par Antonio Laisé, ingénieur data & fiabilité, Hanovre.",
 
       // Header
       nav_solution: "Solution",
@@ -28,7 +28,7 @@
       // Hero
       hero_eyebrow: "Conseil indépendant · données & pilotage",
       hero_title: "Vos données structurées. Votre pilotage clarifié.",
-      hero_lead: "J'accompagne les TPE et PME pour transformer des données éparpillées en un pilotage clair de leur activité. Tout part de votre métier et de vos enjeux ; le tableau de bord sur-mesure est l'aboutissement.",
+      hero_lead: "J'accompagne les TPE et PME pour transformer des données éparpillées en un pilotage clair de leur activité. Tout part de votre métier et de vos enjeux ; le tableau de bord sur mesure est l'aboutissement.",
       hero_cta_primary: "Échangeons 30 minutes",
       hero_cta_secondary: "Voir des exemples",
 
@@ -65,7 +65,7 @@
       feature4_desc: "Bascule FR / EN / DE (ou autre langue sur demande) en 1 clic. Idéal pour les TPE et PME internationales ou avec des équipes multi-pays.",
       feature5_title: "Mode TV plein écran",
       feature5_desc: "Pensé pour l'affichage permanent en open space, atelier ou salle de réunion. Mode sombre disponible pour réduire la fatigue visuelle.",
-      feature6_title: "Conçu sur-mesure pour votre métier",
+      feature6_title: "Conçu sur mesure pour votre métier",
       feature6_desc: "Indicateurs, visualisations, alertes, couleurs définis avec vous lors de l'audit. Pas de visuels génériques qui ne vous parlent pas. Entièrement adaptable à votre charte graphique. Un outil à votre taille : exactement ce qu'il vous faut, rien de superflu.",
       feature7_title: "Seuils visuels configurables en autonomie",
       feature7_desc: "Vert, orange, rouge (ou autres !) selon vos règles métier. Les seuils et les cibles sont définis dans votre fichier, modifiables à tout moment sans intervention technique. La personnalisation n'a pas de limites.",
@@ -88,7 +88,7 @@
       step2_desc: "Définition d'un schéma de données propre. Organisation des sources et des responsabilités.",
       step3_title: "Construction du tableau de bord",
       step3_meta: "2 à 3 jours par unité",
-      step3_desc: "Développement sur-mesure : indicateurs métier, visualisations adaptées, multi-langue natif (FR/EN/DE) si besoin.",
+      step3_desc: "Développement sur mesure : indicateurs métier, visualisations adaptées, multi-langue natif (FR/EN/DE) si besoin.",
       step4_title: "Déploiement et formation",
       step4_meta: "1 à 2 jours",
       step4_desc: "Mise en ligne sécurisée. Formation à l'utilisation et à la mise à jour des données.",
@@ -139,7 +139,7 @@
       monday3_item1: "Monday gère vos tâches, le dashboard pilote votre performance globale.",
       monday3_item2: "On peut se connecter directement à vos données Monday ou Jira via leur API.",
       monday3_item3: "Les deux coexistent sans friction, chacun dans son rôle.",
-      pull_quote: "Ces outils sont conçus pour des millions d'usages différents. Un tableau de bord sur-mesure est conçu pour un seul : le vôtre.",
+      pull_quote: "Ces outils sont conçus pour des millions d'usages différents. Un tableau de bord sur mesure est conçu pour un seul : le vôtre.",
 
       // Tarifs
       tarifs_eyebrow: "Tarifs",
@@ -149,15 +149,16 @@
       price_diag_title: "Diagnostic Data",
       price_diag_desc: "Cartographie de vos données, identification des KPIs critiques, recommandations. Déduit du projet si vous lancez le build.",
       price_build_title: "Build « Pilotage »",
-      price_build_desc: "Audit + 1 dashboard sur-mesure + déploiement + formation.",
+      price_build_desc: "Audit + 1 dashboard sur mesure + déploiement + formation.",
       price_build_opts_html: "Avec Assistant IA : <strong>2&nbsp;400&nbsp;€</strong> · Option on-premise : <strong>+350&nbsp;€</strong> · Dashboard supplémentaire : <strong>+1&nbsp;100&nbsp;€</strong>",
       abo_title: "Abonnement mensuel (par dashboard)",
-      abo_cloud_html: "<strong>Cloud · Pilotage — 120&nbsp;€/mois</strong><span>Hébergement géré, maintenance, évolutions.</span>",
-      abo_cloud_ia_html: "<strong>Cloud · Pilotage + IA — 180&nbsp;€/mois</strong><span>+ assistant IA et alertes intelligentes. Recommandé.</span>",
-      abo_onprem_html: "<strong>On-premise · Pilotage — 100&nbsp;€/mois</strong><span>Sur votre serveur, maintenance et évolutions.</span>",
-      abo_onprem_ia_html: "<strong>On-premise · Pilotage + IA — 160&nbsp;€/mois</strong><span>+ assistant IA (LLM cloud, agrégats seulement).</span>",
+      abo_cloud_html: "<strong>Cloud · Pilotage : 120&nbsp;€/mois</strong><span>Hébergement géré, maintenance, évolutions.</span>",
+      abo_cloud_ia_html: "<strong>Cloud · Pilotage + IA : 180&nbsp;€/mois</strong><span>+ assistant IA et alertes intelligentes. Recommandé.</span>",
+      abo_onprem_html: "<strong>On-premise · Pilotage : 100&nbsp;€/mois</strong><span>Sur votre serveur, maintenance et évolutions.</span>",
+      abo_onprem_ia_html: "<strong>On-premise · Pilotage + IA : 160&nbsp;€/mois</strong><span>+ assistant IA (LLM cloud, agrégats seulement).</span>",
       tarifs_notice_html: "Assistant IA 100&nbsp;% local (LLM hébergé chez vous) : sur demande, sur devis. · Intervention hors forfait : 80&nbsp;€/h. · Périmètre spécifique (sources multiples, connecteur métier) : sur devis, 400&nbsp;€/j.",
       tarifs_tax: "Tarifs en euros. TVA non applicable (régime de la franchise en base).",
+      onprem_note: "« Cloud » : hébergé et géré par mes soins, rien à installer chez vous. « On-premise » : installé sur vos propres serveurs, vos données ne quittent jamais votre entreprise.",
 
       // À propos
       apropos_eyebrow: "Qui suis-je",
@@ -193,10 +194,10 @@
       footer_privacy: "Politique de confidentialité",
       footer_copyright: "© 2026 Antonio Laisé. Tous droits réservés.",
 
-      // Modales légales — Mentions
+      // Modales légales :Mentions
       modal_mentions_title: "Mentions légales",
       modal_mentions_h1: "Éditeur du site",
-      modal_mentions_editor_html: "Antonio Laisé<br />Conseil indépendant en structuration de données et dashboards sur-mesure<br />Hanovre, Allemagne<br />Contact : <a href=\"mailto:antonio.laise.pro@gmail.com\" class=\"link\">antonio.laise.pro@gmail.com</a>",
+      modal_mentions_editor_html: "Antonio Laisé<br />Conseil indépendant en structuration de données et dashboards sur mesure<br />Hanovre, Allemagne<br />Contact : <a href=\"mailto:antonio.laise.pro@gmail.com\" class=\"link\">antonio.laise.pro@gmail.com</a>",
       modal_mentions_placeholder: "Statut juridique en cours de constitution. La forme juridique, le numéro d'immatriculation (SIRET ou Steuernummer) et l'adresse professionnelle seront ajoutés dès la finalisation de la structure.",
       modal_mentions_h2: "Directeur de publication",
       modal_mentions_director: "Antonio Laisé",
@@ -207,7 +208,7 @@
       modal_mentions_h5: "Crédits",
       modal_mentions_credits_html: "Site développé par Antonio Laisé en HTML, CSS et JavaScript.<br />Polices : Inter et JetBrains Mono (Google Fonts).",
 
-      // Modales légales — Privacy
+      // Modales légales :Privacy
       modal_privacy_title: "Politique de confidentialité",
       modal_privacy_intro: "Cette politique décrit les données personnelles collectées sur ce site, leur finalité, leur durée de conservation et vos droits, conformément au Règlement Général sur la Protection des Données (RGPD).",
       modal_privacy_h1: "Données collectées via le formulaire de contact",
@@ -370,16 +371,17 @@
       featured_badge: "Recommended",
       price_diag_title: "Data Diagnosis",
       price_diag_desc: "Mapping of your data, identification of critical KPIs, recommendations. Deducted from the project if you proceed with the build.",
-      price_build_title: "Build — « Pilotage »",
+      price_build_title: "Build « Pilotage »",
       price_build_desc: "Audit + 1 custom dashboard + deployment + training.",
       price_build_opts_html: "With AI assistant: <strong>€2,400</strong> · On-premise option: <strong>+€350</strong> · Additional dashboard: <strong>+€1,100</strong>",
       abo_title: "Monthly subscription (per dashboard)",
-      abo_cloud_html: "<strong>Cloud · Pilotage — €120/month</strong><span>Managed hosting, maintenance, evolutions.</span>",
-      abo_cloud_ia_html: "<strong>Cloud · Pilotage + AI — €180/month</strong><span>+ AI assistant and smart alerts. Recommended.</span>",
-      abo_onprem_html: "<strong>On-premise · Pilotage — €100/month</strong><span>On your server, maintenance and evolutions.</span>",
-      abo_onprem_ia_html: "<strong>On-premise · Pilotage + AI — €160/month</strong><span>+ AI assistant (cloud LLM, aggregates only).</span>",
+      abo_cloud_html: "<strong>Cloud · Pilotage : €120/month</strong><span>Managed hosting, maintenance, evolutions.</span>",
+      abo_cloud_ia_html: "<strong>Cloud · Pilotage + AI : €180/month</strong><span>+ AI assistant and smart alerts. Recommended.</span>",
+      abo_onprem_html: "<strong>On-premise · Pilotage : €100/month</strong><span>On your server, maintenance and evolutions.</span>",
+      abo_onprem_ia_html: "<strong>On-premise · Pilotage + AI : €160/month</strong><span>+ AI assistant (cloud LLM, aggregates only).</span>",
       tarifs_notice_html: "Fully local AI assistant (LLM hosted on your premises): on request, by quote. · Off-package intervention: €80/hr. · Specific scope (multiple sources, custom connector): by quote, €400/day.",
       tarifs_tax: "Prices in euros. VAT not applicable (small-business scheme).",
+      onprem_note: "« Cloud »: hosted and managed by me, nothing to install on your side. « On-premise »: installed on your own servers, your data never leaves your company.",
 
       // À propos
       apropos_eyebrow: "About",
@@ -415,7 +417,7 @@
       footer_privacy: "Privacy policy",
       footer_copyright: "© 2026 Antonio Laisé. All rights reserved.",
 
-      // Modales légales — Mentions
+      // Modales légales :Mentions
       modal_mentions_title: "Legal notice",
       modal_mentions_h1: "Site editor",
       modal_mentions_editor_html: "Antonio Laisé<br />Independent consulting in data structuring and custom dashboards<br />Hanover, Germany<br />Contact: <a href=\"mailto:antonio.laise.pro@gmail.com\" class=\"link\">antonio.laise.pro@gmail.com</a>",
@@ -429,7 +431,7 @@
       modal_mentions_h5: "Credits",
       modal_mentions_credits_html: "Site developed by Antonio Laisé in HTML, CSS and JavaScript.<br />Fonts: Inter and JetBrains Mono (Google Fonts).",
 
-      // Modales légales — Privacy
+      // Modales légales :Privacy
       modal_privacy_title: "Privacy policy",
       modal_privacy_intro: "This policy describes the personal data collected on this site, its purpose, retention period and your rights, in compliance with the General Data Protection Regulation (GDPR).",
       modal_privacy_h1: "Data collected via the contact form",
@@ -592,12 +594,13 @@
       price_build_desc: "Audit + 1 maßgeschneidertes Dashboard + Bereitstellung + Schulung.",
       price_build_opts_html: "Mit KI-Assistent: <strong>2.400&nbsp;€</strong> · Option On-Premise: <strong>+350&nbsp;€</strong> · Zusätzliches Dashboard: <strong>+1.100&nbsp;€</strong>",
       abo_title: "Monatliches Abonnement (pro Dashboard)",
-      abo_cloud_html: "<strong>Cloud · Pilotage — 120&nbsp;€/Monat</strong><span>Verwaltetes Hosting, Wartung, Weiterentwicklungen.</span>",
-      abo_cloud_ia_html: "<strong>Cloud · Pilotage + KI — 180&nbsp;€/Monat</strong><span>+ KI-Assistent und intelligente Warnungen. Empfohlen.</span>",
-      abo_onprem_html: "<strong>On-Premise · Pilotage — 100&nbsp;€/Monat</strong><span>Auf Ihrem Server, Wartung und Weiterentwicklungen.</span>",
-      abo_onprem_ia_html: "<strong>On-Premise · Pilotage + KI — 160&nbsp;€/Monat</strong><span>+ KI-Assistent (Cloud-LLM, nur Aggregate).</span>",
+      abo_cloud_html: "<strong>Cloud · Pilotage : 120&nbsp;€/Monat</strong><span>Verwaltetes Hosting, Wartung, Weiterentwicklungen.</span>",
+      abo_cloud_ia_html: "<strong>Cloud · Pilotage + KI : 180&nbsp;€/Monat</strong><span>+ KI-Assistent und intelligente Warnungen. Empfohlen.</span>",
+      abo_onprem_html: "<strong>On-Premise · Pilotage : 100&nbsp;€/Monat</strong><span>Auf Ihrem Server, Wartung und Weiterentwicklungen.</span>",
+      abo_onprem_ia_html: "<strong>On-Premise · Pilotage + KI : 160&nbsp;€/Monat</strong><span>+ KI-Assistent (Cloud-LLM, nur Aggregate).</span>",
       tarifs_notice_html: "Vollständig lokaler KI-Assistent (LLM bei Ihnen gehostet): auf Anfrage, nach Angebot. · Einsatz außerhalb der Pauschale: 80&nbsp;€/Std. · Spezifischer Umfang (mehrere Quellen, individueller Konnektor): nach Angebot, 400&nbsp;€/Tag.",
       tarifs_tax: "Preise in Euro. Keine Umsatzsteuer (Kleinunternehmerregelung, §19 UStG).",
+      onprem_note: "« Cloud »: von mir gehostet und verwaltet, nichts bei Ihnen zu installieren. « On-Premise »: auf Ihren eigenen Servern installiert, Ihre Daten verlassen niemals Ihr Unternehmen.",
 
       // À propos
       apropos_eyebrow: "Über mich",
@@ -633,7 +636,7 @@
       footer_privacy: "Datenschutz",
       footer_copyright: "© 2026 Antonio Laisé. Alle Rechte vorbehalten.",
 
-      // Modales légales — Mentions
+      // Modales légales :Mentions
       modal_mentions_title: "Impressum",
       modal_mentions_h1: "Anbieter der Website",
       modal_mentions_editor_html: "Antonio Laisé<br />Unabhängige Beratung für Datenstrukturierung und maßgeschneiderte Dashboards<br />Hannover, Deutschland<br />Kontakt: <a href=\"mailto:antonio.laise.pro@gmail.com\" class=\"link\">antonio.laise.pro@gmail.com</a>",
@@ -647,7 +650,7 @@
       modal_mentions_h5: "Credits",
       modal_mentions_credits_html: "Website entwickelt von Antonio Laisé in HTML, CSS und JavaScript.<br />Schriften: Inter und JetBrains Mono (Google Fonts).",
 
-      // Modales légales — Privacy
+      // Modales légales :Privacy
       modal_privacy_title: "Datenschutzerklärung",
       modal_privacy_intro: "Diese Erklärung beschreibt die auf dieser Website erhobenen personenbezogenen Daten, ihren Zweck, die Speicherdauer und Ihre Rechte gemäß der Datenschutz-Grundverordnung (DSGVO).",
       modal_privacy_h1: "Über das Kontaktformular erhobene Daten",
@@ -715,10 +718,10 @@
     });
 
     const btn = document.getElementById('langToggle');
-    if (btn) {
-      const next = LANG_ORDER[(LANG_ORDER.indexOf(lang) + 1) % LANG_ORDER.length];
-      btn.textContent = next.toUpperCase();
-    }
+    if (btn) btn.innerHTML = lang.toUpperCase() + '<span class="lang-caret" aria-hidden="true">▾</span>';
+    document.querySelectorAll('#langMenu [data-lang]').forEach(item => {
+      item.classList.toggle('is-active', item.getAttribute('data-lang') === lang);
+    });
   }
 
   function initI18n() {
@@ -726,12 +729,20 @@
     applyLang(lang);
 
     const btn = document.getElementById('langToggle');
-    if (btn) {
-      btn.addEventListener('click', () => {
-        const current = getLang();
-        const next = LANG_ORDER[(LANG_ORDER.indexOf(current) + 1) % LANG_ORDER.length];
-        setLang(next);
+    const menu = document.getElementById('langMenu');
+    const wrap = document.getElementById('langSwitch');
+    if (btn && menu) {
+      const closeMenu = () => { menu.setAttribute('hidden', ''); btn.setAttribute('aria-expanded', 'false'); };
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (menu.hasAttribute('hidden')) { menu.removeAttribute('hidden'); btn.setAttribute('aria-expanded', 'true'); }
+        else { closeMenu(); }
       });
+      menu.querySelectorAll('[data-lang]').forEach(item => {
+        item.addEventListener('click', () => { setLang(item.getAttribute('data-lang')); closeMenu(); });
+      });
+      document.addEventListener('click', (e) => { if (wrap && !wrap.contains(e.target)) closeMenu(); });
+      document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMenu(); });
     }
   }
 
