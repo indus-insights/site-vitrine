@@ -680,6 +680,14 @@
   const LANG_ORDER = ['fr', 'en', 'de'];
 
   function getLang() {
+    // Langue passee dans l'URL (?lang=fr|en|de), ex. depuis la demo dashboards : prioritaire.
+    try {
+      const u = new URLSearchParams(location.search).get('lang');
+      if (u && LANG_ORDER.indexOf(u) !== -1) {
+        localStorage.setItem(STORAGE_KEY, u);
+        return u;
+      }
+    } catch (e) {}
     return localStorage.getItem(STORAGE_KEY) || DEFAULT_LANG;
   }
 
