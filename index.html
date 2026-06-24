@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Antonio Laisé · Conseil en données et pilotage pour TPE et PME</title>
-  <meta name="description" content="Conseil indépendant pour transformer des données éparpillées en un pilotage clair de l'activité. Diagnostic, structuration et dashboards sur mesure connectés à vos fichiers. Par Antonio Laisé, ingénieur data &amp; fiabilité, Hanovre." />
+  <title>Antonio Laisé · Tableaux de bord et pilotage pour PME industrielles</title>
+  <meta name="description" content="Conseil en données pour l'industrie. Je trouve, structure et transforme vos données (production, maintenance, qualité, projets) en tableaux de bord sur mesure connectés à vos fichiers. Antonio Laisé, ingénieur data & fiabilité, Hanovre." />
 
   <!-- Open Graph (Facebook, LinkedIn, etc.) -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Antonio Laisé · Conseil en données et pilotage pour TPE et PME" />
-  <meta property="og:description" content="Conseil indépendant pour transformer vos données éparpillées en un pilotage clair de votre activité." />
+  <meta property="og:title" content="Antonio Laisé · Tableaux de bord et pilotage pour PME industrielles" />
+  <meta property="og:description" content="Je transforme vos données industrielles éparpillées en un pilotage clair, sur mesure, connecté à vos fichiers." />
   <meta property="og:image" content="assets/dashboard-maintenance.png" />
   <meta property="og:image:width" content="1920" />
   <meta property="og:image:height" content="1080" />
@@ -17,8 +17,8 @@
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Antonio Laisé · Conseil en données et pilotage pour TPE et PME" />
-  <meta name="twitter:description" content="Conseil indépendant pour transformer vos données éparpillées en un pilotage clair de votre activité." />
+  <meta name="twitter:title" content="Antonio Laisé · Tableaux de bord et pilotage pour PME industrielles" />
+  <meta name="twitter:description" content="Je transforme vos données industrielles éparpillées en un pilotage clair, sur mesure, connecté à vos fichiers." />
   <meta name="twitter:image" content="assets/dashboard-maintenance.png" />
 
   <!-- Favicon SVG (flèche montante en bleu primaire, cohérent avec le logo) -->
@@ -27,11 +27,131 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" />
-  <link rel="stylesheet" href="styles.css?v=4" />
+  <link rel="stylesheet" href="styles.css?v=6" />
 
-  <!-- Umami Analytics (privacy-friendly, sans cookies) -->
-  <!-- Umami désactivé tant qu'aucun Website n'est créé (cf. politique de confidentialité). Décommenter et remplacer YOUR_WEBSITE_ID pour activer. -->
-  <!-- <script defer src="https://cloud.umami.is/script.js" data-website-id="YOUR_WEBSITE_ID"></script> -->
+  <!-- Refonte juin 2026 : ciblage PME industrielles, multilingue FR/EN/DE actif via i18n.js.
+       Les styles ajoutés ci-dessous sont à fusionner dans styles.css à terme. -->
+
+  <style>
+    /* --- Ajouts V1 refonte (à fusionner dans styles.css une fois figé) --- */
+    /* Frise chronologique T1 -> T4 (parcours de transformation) */
+    .rm-intro { margin: 32px 0 28px; font-size: 16px; color: #334155; font-weight: 600; }
+    .roadmap { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(4, 1fr); }
+    .roadmap .rm-step { position: relative; padding: 0 14px; text-align: center; }
+    .roadmap .rm-dot {
+      position: relative; z-index: 1;
+      width: 46px; height: 46px; border-radius: 50%;
+      margin: 0 auto 16px; display: grid; place-items: center;
+      font: 700 14px/1 'JetBrains Mono', monospace; letter-spacing: .02em;
+    }
+    .roadmap .rm-step:not(:first-child)::before {
+      content: ''; position: absolute; top: 23px; left: -50%; width: 100%; height: 3px;
+      background: #e2e8f0; transform: translateY(-50%); z-index: 0;
+    }
+    .roadmap .rm-body h4 { margin: 0 0 7px; font-size: 16px; color: #0f172a; }
+    .roadmap .rm-body p { margin: 0; font-size: 14px; line-height: 1.5; color: #475569; }
+    /* progression de teinte : situation subie -> aboutissement */
+    .roadmap .rm-1 .rm-dot { background: #fdecea; color: #c0392b; }
+    .roadmap .rm-2 .rm-dot { background: #fef5e7; color: #b9770e; }
+    .roadmap .rm-3 .rm-dot { background: #e8f0fb; color: #2163CA; }
+    .roadmap .rm-4 .rm-dot { background: linear-gradient(135deg, #2163CA, #1f9d6b); color: #fff; box-shadow: 0 6px 16px rgba(33,99,202,.25); }
+    @media (max-width: 720px) {
+      .roadmap { grid-template-columns: 1fr; }
+      .roadmap .rm-step { display: grid; grid-template-columns: 46px 1fr; gap: 16px; text-align: left; padding: 0 0 26px 0; }
+      .roadmap .rm-step .rm-dot { margin: 0; }
+      .roadmap .rm-step .rm-body { padding-top: 4px; }
+      .roadmap .rm-step:not(:first-child)::before { display: none; }
+      .roadmap .rm-step:not(:last-child)::after {
+        content: ''; position: absolute; left: 22px; top: 46px; bottom: 0; width: 3px;
+        background: #e2e8f0; transform: translateX(-50%);
+      }
+    }
+    /* Pourquoi vos données : 2 blocs sobres */
+    .why-data { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 28px; }
+    .why-data .why-card { border: 1px solid var(--border, #e2e8f0); border-radius: 12px; padding: 20px 22px; background: #fff; }
+    .why-data .why-card h4 { margin: 0 0 12px; font-size: 15px; color: #2163CA; }
+    .why-data .why-card p { margin: 0; font-size: 16px; line-height: 1.5; color: #334155; }
+    .why-data .why-card .why-lead { font-size: 17px; line-height: 1.45; color: #0f172a; font-weight: 600; }
+    .why-chute { max-width: 800px; margin: 18px 0 0; font-size: 16px; color: #334155; }
+    .why-chute strong { color: #2163CA; }
+    /* l'eyebrow "Qui suis-je" héritait du gris de .about-text p : on rétablit le bleu */
+    .about-text .eyebrow { color: var(--c-primary); }
+    /* Cartes "flip" : clic = retournement sur l'axe horizontal (haut/bas) */
+    .args-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 28px; }
+    .arg-card {
+      position: relative; cursor: pointer;
+      perspective: 1400px;
+      background: transparent; border: 0; padding: 0;
+    }
+    .arg-card:focus-visible { outline: 2px solid #2163CA; outline-offset: 3px; border-radius: 16px; }
+    /* les 2 faces sont empilées dans la même cellule de grille :
+       la carte prend automatiquement la hauteur de la face la plus longue */
+    .arg-inner {
+      display: grid; grid-template-columns: minmax(0, 1fr); grid-template-rows: 1fr;
+      height: 100%;
+      transform-style: preserve-3d;
+      transition: transform .6s cubic-bezier(.4,.08,.2,1);
+    }
+    .arg-card.is-open .arg-inner { transform: rotateX(180deg); }
+    .arg-face {
+      grid-area: 1 / 1; position: relative; overflow: hidden;
+      -webkit-backface-visibility: hidden; backface-visibility: hidden;
+      border: 1px solid var(--border, #e2e8f0); border-radius: 16px;
+      padding: 24px 26px; display: flex; flex-direction: column;
+      transition: box-shadow .2s ease;
+    }
+    .arg-front { justify-content: flex-start; background: linear-gradient(160deg, #fff 0%, #f5f8fc 100%); }
+    .arg-back { transform: rotateX(180deg); justify-content: center; border-color: #cfe0f7; background: linear-gradient(160deg, #f4f8fd 0%, #eaf1fc 100%); }
+    .arg-card:hover .arg-face { box-shadow: 0 12px 28px rgba(15,23,42,.10); }
+    .arg-face .arg-num {
+      position: absolute; bottom: -28px; right: 6px;
+      font: 800 120px/1 'Inter', sans-serif; color: rgba(33,99,202,.07);
+      pointer-events: none;
+    }
+    .arg-front .arg-bar { position: static; width: 34px; height: 4px; border-radius: 2px; background: #2163CA; margin: 0 0 16px; }
+    .arg-front h3 { position: relative; margin: 0; font-size: 21px; line-height: 1.25; letter-spacing: -.01em; }
+    .arg-back .arg-detail { margin: 0; font-size: 15px; line-height: 1.55; color: #475569; }
+    /* réserve un petit espace en haut à droite, seulement pour la 1re ligne (sous l'icône) */
+    .arg-back .arg-detail::before { content: ""; float: right; width: 40px; height: 24px; }
+    .arg-toggle {
+      position: absolute; top: 16px; right: 16px;
+      width: 28px; height: 28px; border-radius: 50%;
+      display: grid; place-items: center; line-height: 1;
+      font-size: 16px; color: #2163CA; background: rgba(33,99,202,.08);
+      transition: transform .6s cubic-bezier(.4,.08,.2,1), background .2s ease;
+    }
+    .arg-card:hover .arg-toggle { background: rgba(33,99,202,.16); }
+    .arg-card.is-open .arg-toggle { transform: rotate(-180deg); }
+    .price-explain { max-width: 720px; }
+    .price-explain .price-line { display: flex; justify-content: space-between; gap: 16px; padding: 10px 0; border-bottom: 1px dashed #e2e8f0; }
+    .price-explain .price-line:last-of-type { border-bottom: 0; }
+    .price-explain .price-line .pl-label { color: #475569; }
+    .price-explain .price-line .pl-val { font-weight: 700; white-space: nowrap; }
+    .price-explain .price-total { display: flex; justify-content: space-between; gap: 16px; margin-top: 10px; padding-top: 14px; border-top: 2px solid #0f172a; font-size: 19px; }
+    .price-explain .price-total .pl-val { color: #2163CA; font-weight: 800; }
+    /* Fonctionnalités en version compacte : icône + titre seuls */
+    .feature-chips { grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    .feature-chips .feature { flex-direction: row; align-items: center; gap: 14px; padding: 15px 18px; }
+    .feature-chips .feature-icon { width: 40px; height: 40px; flex-shrink: 0; }
+    .feature-chips .feature-icon svg { width: 21px; height: 21px; }
+    .feature-chips .feature h3 { font-size: 15px; line-height: 1.3; }
+    .feature-chips .feature-ai { order: 0; grid-column: 1 / -1; flex-direction: row; }
+    .feature-chips .feature-ai .feature-icon { width: 40px; height: 40px; }
+    .feature-chips .feature-ai .feature-icon svg { width: 21px; height: 21px; }
+    @media (max-width: 760px) { .feature-chips { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 520px) { .feature-chips { grid-template-columns: 1fr; } }
+    .feature-ai-note { font-weight: 400; font-size: 14px; color: #64748b; }
+    /* À propos : aligner le haut de la photo avec le titre (sous l'eyebrow) */
+    @media (min-width: 820px) {
+      #a-propos .about-photo { margin-top: 40px; }
+    }
+    @media (max-width: 860px) {
+      .args-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 640px) {
+      .why-data { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body>
 
@@ -46,10 +166,9 @@
         <span class="brand-name">Antonio Laisé</span>
       </a>
       <nav class="nav">
-        <a href="#solution" data-i18n="nav_solution">Solution</a>
-        <a href="#approche" data-i18n="nav_approche">Approche</a>
+        <a href="#constat" data-i18n="nav_probleme">Le problème</a>
+        <a href="#solution" data-i18n="nav_solution">Ce que je fais</a>
         <a href="#exemples" data-i18n="nav_exemples">Exemples</a>
-        <a href="#pourquoi-custom" data-i18n="nav_pourquoi">Pourquoi custom</a>
         <a href="#tarifs" data-i18n="nav_tarifs">Tarifs</a>
         <a href="#a-propos" data-i18n="nav_apropos">À propos</a>
       </nav>
@@ -71,16 +190,14 @@
     <section class="section hero">
       <div class="container hero-grid">
         <div class="hero-text">
-          <p class="eyebrow" data-i18n="hero_eyebrow">Conseil indépendant · données &amp; pilotage</p>
-          <h1 data-i18n="hero_title">Vos données structurées. Votre pilotage clarifié.</h1>
+          <p class="eyebrow" data-i18n="hero_eyebrow">Conseil en données pour l'industrie</p>
+          <h1 data-i18n="hero_title">Le pilotage industriel sur mesure, connecté à vos fichiers.</h1>
           <p class="lead" data-i18n="hero_lead">
-            J'accompagne les TPE et PME pour transformer des données éparpillées en un pilotage
-            clair de leur activité. Tout part de votre métier et de vos enjeux ; le tableau de bord
-            sur mesure est l'aboutissement.
+            J'aide les PME industrielles à piloter leur production, leur maintenance et leurs projets
+            avec leurs propres chiffres. Travaillons ensemble !
           </p>
           <div class="hero-actions">
-            <a href="#contact" class="btn btn-primary" data-i18n="hero_cta_primary">Échangeons 30 minutes</a>
-            <a href="#exemples" class="btn btn-ghost" data-i18n="hero_cta_secondary">Voir des exemples</a>
+            <a href="#contact" class="btn btn-primary" data-i18n="hero_cta">Échangeons 30 minutes</a>
           </div>
         </div>
         <div class="hero-visual">
@@ -90,72 +207,114 @@
               <span class="dm-url">dashboard.antonio-laise.eu</span>
               <span class="dm-lang">FR · EN · DE</span>
             </div>
-            <img class="dm-image" src="assets/dashboard-maintenance.png?v=4" alt="Aperçu d'un dashboard de maintenance industrielle" width="1920" height="1080" />
+            <img class="dm-image" src="assets/dashboard-maintenance.png?v=4" alt="Aperçu d'un tableau de bord de maintenance industrielle" width="1920" height="1080" />
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ============ SECTION 2 : LE CONSTAT ============ -->
+    <!-- ============ SECTION 2 : LE PROBLÈME ============ -->
     <section class="section section-alt" id="constat">
       <div class="container narrow">
-        <p class="eyebrow" data-i18n="constat_eyebrow">Le constat</p>
-        <h2 data-i18n="constat_title">Beaucoup de données. Peu de visibilité.</h2>
-        <p class="body-text" data-i18n="constat_body">
-          La plupart des TPE et PME pilotent à l'instinct, ou avec des outils mal adaptés.
-          Les données existent. Elles sont juste éparpillées entre fichiers Excel, Google Sheets,
-          ERP et exports manuels. Power BI et Tableau sont pensés pour des grandes entreprises,
-          avec leurs équipes data dédiées. Résultat : pas de vraie visibilité sur l'activité,
-          et des décisions prises sans appui chiffré.
+        <p class="eyebrow" data-i18n="prob_eyebrow">Le problème</p>
+        <h2 data-i18n="prob_title">Beaucoup de données, peu de visibilité.</h2>
+        <p class="body-text" data-i18n="prob_p1">
+          Dans beaucoup d'entreprises, les employés perdent du temps car les données sont éparpillées, les
+          formats ne sont pas standardisés, les responsabilités mal définies.
+          La situation d'ensemble est souvent devinée mais rarement visualisée et chiffrée.
+        </p>
+        <p class="body-text" data-i18n="prob_p2">
+          Power BI et Tableau sont pensés pour les grands groupes et leurs équipes data, pas pour
+          un atelier qui veut un outil simple, taillé pour son métier.
         </p>
       </div>
     </section>
 
-    <!-- ============ SECTION 3 : MA SOLUTION ============ -->
+    <!-- ============ SECTION 3 : CE QUE JE FAIS ============ -->
     <section class="section" id="solution">
       <div class="container">
-        <p class="eyebrow" data-i18n="solution_eyebrow">Ce que vous obtenez</p>
-        <h2 data-i18n="solution_title">Un instrument de pilotage taillé pour votre métier.</h2>
-        <p class="body-text" style="height: 56px; max-width: 100%; font-weight: 400" data-i18n="solution_sub">
-          Pas d'installation. Pas de logiciel à apprendre. Vos données restent où elles sont.
-        </p>
+        <p class="eyebrow" data-i18n="sol_eyebrow">Ce que je fais, la solution !</p>
 
+
+        <!-- L'offre en 3 temps (même design que les arguments : déplier au clic) -->
+        <div class="args-grid args-steps">
+          <article class="arg-card" role="button" tabindex="0" aria-expanded="false" aria-label="Trouver la donnée" data-i18n-aria-label="step1_aria">
+            <div class="arg-inner">
+              <div class="arg-face arg-front">
+                <span class="arg-num">1</span>
+                <span class="arg-bar"></span>
+                <span class="arg-toggle" aria-hidden="true">↻</span>
+                <h3 data-i18n="step1_title">Trouver la donnée</h3>
+              </div>
+              <div class="arg-face arg-back">
+                <span class="arg-toggle" aria-hidden="true">↻</span>
+                <p class="arg-detail" data-i18n="step1_detail">Cartographions ce qui existe et choisissons ensemble les indicateurs nécessaires au pilotage de vos opérations.</p>
+              </div>
+            </div>
+          </article>
+          <article class="arg-card" role="button" tabindex="0" aria-expanded="false" aria-label="La formaliser" data-i18n-aria-label="step2_aria">
+            <div class="arg-inner">
+              <div class="arg-face arg-front">
+                <span class="arg-num">2</span>
+                <span class="arg-bar"></span>
+                <span class="arg-toggle" aria-hidden="true">↻</span>
+                <h3 data-i18n="step2_title">La formaliser</h3>
+              </div>
+              <div class="arg-face arg-back">
+                <span class="arg-toggle" aria-hidden="true">↻</span>
+                <p class="arg-detail" data-i18n="step2_detail">Structurons ces données en un format propre et fiable, et fixons les responsabilités et les process de mise à jour.</p>
+              </div>
+            </div>
+          </article>
+          <article class="arg-card" role="button" tabindex="0" aria-expanded="false" aria-label="La piloter" data-i18n-aria-label="step3_aria">
+            <div class="arg-inner">
+              <div class="arg-face arg-front">
+                <span class="arg-num">3</span>
+                <span class="arg-bar"></span>
+                <span class="arg-toggle" aria-hidden="true">↻</span>
+                <h3 data-i18n="step3_title">La piloter</h3>
+              </div>
+              <div class="arg-face arg-back">
+                <span class="arg-toggle" aria-hidden="true">↻</span>
+                <p class="arg-detail" data-i18n="step3_detail">Créons un tableau de bord sur mesure, mis à jour automatiquement, qui signale les écarts dès qu'ils apparaissent.</p>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Avant / après : tableur brut -> indicateur calculé -->
         <div class="compare-block">
-
-          <!-- Tableur Excel/Sheets simulé -->
           <div class="sheet-window">
             <div class="sheet-titlebar">
               <span class="mac-dot red"></span>
               <span class="mac-dot yellow"></span>
               <span class="mac-dot green"></span>
-              <span class="sheet-titlebar-title" data-i18n="sheet_file">Project_Tracking.xlsx</span>
+              <span class="sheet-titlebar-title">Suivi_Projet.xlsx</span>
             </div>
             <table class="sheet-grid">
               <thead>
                 <tr><th></th><th>A</th><th>B</th></tr>
               </thead>
               <tbody>
-                <tr><th>1</th><td data-i18n="sheet_r1">Date_Start</td><td class="sheet-num">01/01/2026</td></tr>
-                <tr><th>2</th><td data-i18n="sheet_r2">Date_End_Plan</td><td class="sheet-num">30/06/2026</td></tr>
-                <tr><th>3</th><td data-i18n="sheet_r3">Date_End_Est</td><td class="sheet-num">15/07/2026</td></tr>
-                <tr><th>4</th><td data-i18n="sheet_r4">Tasks_Total</td><td class="sheet-num">50</td></tr>
-                <tr><th>5</th><td data-i18n="sheet_r5">Tasks_Done</td><td class="sheet-num">36</td></tr>
+                <tr><th>1</th><td>Date_Début</td><td class="sheet-num">01/01/2026</td></tr>
+                <tr><th>2</th><td>Fin_Prévue</td><td class="sheet-num">30/06/2026</td></tr>
+                <tr><th>3</th><td>Fin_Estimée</td><td class="sheet-num">15/07/2026</td></tr>
+                <tr><th>4</th><td>Tâches_Total</td><td class="sheet-num">50</td></tr>
+                <tr><th>5</th><td>Tâches_Faites</td><td class="sheet-num">36</td></tr>
               </tbody>
             </table>
           </div>
 
-          <!-- Flèche de transformation -->
           <div class="compare-arrow" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none"><path d="M4 12h13M12 6l6 6-6 6" stroke="#2163CA" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span data-i18n="compare_arrow_label">Calculé automatiquement</span>
+            <span data-i18n="compare_arrow">Calculé automatiquement</span>
           </div>
 
-          <!-- Carte PROGRESS du dashboard -->
           <div class="dash-side">
             <div class="kpi-card warn">
-              <div class="kpi-title">PROGRESS <span class="period-tag">PROJECT</span></div>
-              <div class="kpi-value warn">72%</div>
-              <div class="kpi-label" data-i18n="kpi_label_progress">72% done, 80.6% of schedule elapsed</div>
+              <div class="kpi-title"><span data-i18n="kpi_progress_title">AVANCEMENT</span> <span class="period-tag" data-i18n="period_projet">PROJET</span></div>
+              <div class="kpi-value warn">72 %</div>
+              <div class="kpi-label" data-i18n="kpi_progress_label">72 % réalisé, 80,6 % du planning écoulé</div>
               <div class="kpi-bar-wrap">
                 <div class="kpi-bar-zone-1"></div>
                 <div class="kpi-bar-zone-2"></div>
@@ -165,133 +324,137 @@
               </div>
               <div class="kpi-footer">
                 <div class="kpi-stat">
-                  <div class="kpi-stat-value bad" data-i18n="kpi_value_days_late">15 days late</div>
-                  <div class="kpi-stat-label" data-i18n="kpi_label_days">DAYS VARIANCE</div>
+                  <div class="kpi-stat-value bad" data-i18n="kpi_late">15 j. de retard</div>
+                  <div class="kpi-stat-label" data-i18n="kpi_late_label">ÉCART PRÉVU À LA FIN</div>
                 </div>
               </div>
             </div>
           </div>
-
         </div>
 
-        <blockquote class="pull-quote" data-i18n="instruments_callout">Ces dashboards ne sont pas des rapports à produire en fin de mois. Ce sont des instruments de pilotage qui lisent vos fichiers en continu et signalent les écarts dès qu'ils apparaissent.</blockquote>
-
-        <p class="solution-legend" data-i18n-html="solution_legend_html">
-          Vos équipes saisissent les données brutes dans un outil qu'elles connaissent déjà.<br />
-          Le dashboard fait tout le reste, automatiquement.
+        <p class="solution-legend" data-i18n-html="solution_legend">
+          Vos équipes saisissent la donnée brute dans un outil qu'elles connaissent déjà.<br />
+          Le tableau de bord fait tout le reste, automatiquement.
         </p>
 
-        <div class="solution-grid">
+        <!-- Pourquoi ça change le pilotage : les 2 questions -->
+        <div class="why-data">
+          <div class="why-card">
+            <h4 data-i18n="why1_q">Pourquoi structurer vos données ?</h4>
+            <p class="why-lead" data-i18n="why1_a">Des sources, des formats et des versions multiples vous font perdre en efficacité et en fiabilité tous les jours.</p>
+          </div>
+          <div class="why-card">
+            <h4 data-i18n="why2_q">Pourquoi un tableau de bord pour exploiter ces données au mieux ?</h4>
+            <p class="why-lead" data-i18n="why2_a">Piloter avec les chiffres importants, mis en avant et à jour en continu, permet de décider instantanément.</p>
+          </div>
+        </div>
+
+        <p class="why-chute" data-i18n-html="why_chute">Des décisions plus rapides et des problèmes pris à temps : <strong>du temps et de l'argent économisés.</strong></p>
+
+        <!-- Frise chronologique : le parcours de transformation -->
+        <p class="rm-intro" data-i18n="rm_intro">Concrètement, le chemin de vos fichiers à votre pilotage :</p>
+        <ol class="roadmap">
+          <li class="rm-step rm-1">
+            <div class="rm-dot">T1</div>
+            <div class="rm-body">
+              <h4 data-i18n="rm1_t">Aujourd'hui</h4>
+              <p data-i18n="rm1_p">Sources éparpillées, une version par collègue, chacun sa méthode. Vous pilotez à l'aveugle.</p>
+            </div>
+          </li>
+          <li class="rm-step rm-2">
+            <div class="rm-dot">T2</div>
+            <div class="rm-body">
+              <h4 data-i18n="rm2_t">Le diagnostic</h4>
+              <p data-i18n="rm2_p">On cartographie vos données et on choisit ensemble les indicateurs qui comptent vraiment pour votre activité.</p>
+            </div>
+          </li>
+          <li class="rm-step rm-3">
+            <div class="rm-dot">T3</div>
+            <div class="rm-body">
+              <h4 data-i18n="rm3_t">L'organisation clarifiée</h4>
+              <p data-i18n="rm3_p">Process standardisés, fini les versions multiples. La communication et les responsabilités sont fixées dans les équipes.</p>
+            </div>
+          </li>
+          <li class="rm-step rm-4">
+            <div class="rm-dot">T4</div>
+            <div class="rm-body">
+              <h4 data-i18n="rm4_t">Le pilotage en main</h4>
+              <p data-i18n="rm4_p">Un outil de pilotage taillé à vos besoins, alimenté par des données fiables et mises à jour en continu.</p>
+            </div>
+          </li>
+        </ol>
+
+        <blockquote class="pull-quote" data-i18n="pull_quote_1">Un tableau de bord n'est pas un rapport à produire en fin de mois. C'est un instrument de pilotage qui lit vos fichiers en continu et signale les écarts dès qu'ils apparaissent.</blockquote>
+
+        <!-- Capacités clés : icône + titre seuls -->
+        <div class="solution-grid feature-chips">
           <article class="feature">
             <div class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h6"/><path d="M14 6h6"/><circle cx="12" cy="6" r="2"/><path d="M4 12h2"/><path d="M10 12h10"/><circle cx="8" cy="12" r="2"/><path d="M4 18h10"/><path d="M18 18h2"/><circle cx="16" cy="18" r="2"/></svg></div>
-            <h3 data-i18n="feature6_title">Conçu sur mesure pour votre métier</h3>
-            <p data-i18n="feature6_desc">KPIs, visualisations, alertes définis avec vous lors de l'audit. Pas de visuels génériques qui ne correspondent à rien.</p>
+            <h3 data-i18n="feat1">Conçu sur mesure pour votre métier</h3>
           </article>
 
           <article class="feature">
             <div class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 0 1-15.6 6.1"/><path d="M3 12A9 9 0 0 1 18.6 5.9"/><path d="M18 3v4h-4"/><path d="M6 21v-4h4"/></svg></div>
-            <h3 data-i18n="feature1_title">Connecté en temps réel à vos sources existantes</h3>
-            <p data-i18n="feature1_desc">Google Sheets, Excel local, Excel OneDrive / SharePoint, et autres sources sur demande (ERP, bases de données, API). Vous saisissez la donnée brute, le dashboard se met à jour automatiquement.</p>
+            <h3 data-i18n="feat2">Connecté à vos sources existantes</h3>
           </article>
 
           <article class="feature">
             <div class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="8" height="8" rx="1.5"/><rect x="13" y="3" width="8" height="5" rx="1.5"/><rect x="3" y="13" width="8" height="8" rx="1.5"/><rect x="13" y="10" width="8" height="11" rx="1.5"/></svg></div>
-            <h3 data-i18n="feature2_title">Template intelligent</h3>
-            <p data-i18n="feature2_desc">Vous ne remplissez que les informations manquantes. Tous les calculs (moyennes, ratios, agrégations, alertes) sont faits automatiquement côté serveur.</p>
+            <h3 data-i18n="feat3">Indicateurs calculés automatiquement</h3>
           </article>
 
           <article class="feature">
             <div class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="1" fill="currentColor" stroke="none"/></svg></div>
-            <h3 data-i18n="feature7_title">Seuils visuels configurables en autonomie</h3>
-            <p data-i18n="feature7_desc">Vert, orange, rouge selon vos règles métier. Les seuils et les cibles sont définis dans votre fichier, modifiables à tout moment sans intervention technique.</p>
+            <h3 data-i18n="feat4">Seuils visuels configurables</h3>
           </article>
 
           <article class="feature">
             <div class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></div>
-            <h3 data-i18n="feature8_title">Alertes et rapports automatiques par email</h3>
-            <p data-i18n="feature8_desc">Dès qu'un indicateur franchit un seuil critique, vous recevez un email. Et chaque semaine, une synthèse arrive automatiquement dans votre boîte mail. Le dashboard vous prévient, même quand personne ne le regarde.</p>
+            <h3 data-i18n="feat5">Alertes et rapports par email</h3>
           </article>
 
           <article class="feature">
             <div class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m7 14 4-5 3 3 5-7"/><path d="M19 5v3h-3"/></svg></div>
-            <h3 data-i18n="feature9_title">Historique et tendances</h3>
-            <p data-i18n="feature9_desc">Le dashboard enregistre vos indicateurs chaque jour et affiche leur évolution sur 30, 60 ou 90 jours. Vous voyez les tendances de fond, pas seulement l'instantané.</p>
-          </article>
-
-          <article class="feature feature-ai">
-            <div class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.8 4.7L18.5 9.5 13.8 11.3 12 16l-1.8-4.7L5.5 9.5l4.7-1.8z"/><path d="M19 14l.6 1.6 1.6.6-1.6.6-.6 1.6-.6-1.6-1.6-.6 1.6-.6z"/></svg></div>
-            <div class="feature-ai-body">
-              <h3 data-i18n="feature_ai_title">Assistant IA intégré</h3>
-              <p data-i18n="feature_ai_desc">Posez une question en langage naturel à votre dashboard (« quel équipement traiter en priorité ? ») et obtenez une réponse claire, tirée de vos seules données. L'assistant explique aussi les écarts détectés. Vos données restent chez vous : seuls les indicateurs agrégés sont analysés, jamais vos lignes brutes.</p>
-            </div>
+            <h3 data-i18n="feat6">Historique et tendances</h3>
           </article>
 
           <article class="feature">
             <div class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3.5 12h17"/><path d="M12 3a14 14 0 0 1 0 18"/><path d="M12 3a14 14 0 0 0 0 18"/></svg></div>
-            <h3 data-i18n="feature4_title">Multi-langue natif</h3>
-            <p data-i18n="feature4_desc">Bascule FR / EN / DE (ou autre langue sur demande) en 1 clic. Idéal pour les TPE et PME internationales ou avec des équipes multi-pays.</p>
+            <h3 data-i18n="feat7">Multi-langue natif</h3>
           </article>
 
           <article class="feature">
             <div class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="14" height="10" rx="1.5"/><path d="M6 18h6"/><path d="M9 14v4"/><rect x="17" y="9" width="5" height="11" rx="1.5"/></svg></div>
-            <h3 data-i18n="feature3_title">Accessible n'importe où, sur n'importe quel écran</h3>
-            <p data-i18n="feature3_desc">Simple lien web protégé, pas d'installation. Fonctionne sur ordinateur, tablette, smartphone, écran TV d'atelier.</p>
+            <h3 data-i18n="feat8">Accessible sur tout écran</h3>
           </article>
 
           <article class="feature">
             <div class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="13" rx="1.5"/><path d="M8 21h8"/><path d="M12 17v4"/><path d="m9 8 4 2.5L9 13z" fill="currentColor" stroke="none"/></svg></div>
-            <h3 data-i18n="feature5_title">Mode TV plein écran</h3>
-            <p data-i18n="feature5_desc">Pensé pour l'affichage permanent en open space, atelier ou salle de réunion. Mode sombre disponible pour réduire la fatigue visuelle.</p>
+            <h3 data-i18n="feat9">Mode TV plein écran</h3>
+          </article>
+
+          <article class="feature feature-ai">
+            <div class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.8 4.7L18.5 9.5 13.8 11.3 12 16l-1.8-4.7L5.5 9.5l4.7-1.8z"/><path d="M19 14l.6 1.6 1.6.6-1.6.6-.6 1.6-.6-1.6-1.6-.6 1.6-.6z"/></svg></div>
+            <h3 data-i18n-html="feat_ai">Assistant IA intégré (option) : <span class="feature-ai-note">posez une question en langage naturel, obtenez une réponse tirée de vos seules données.</span></h3>
           </article>
         </div>
-
-        <p class="solution-drill" data-i18n-html="solution_drilldown"><strong>Besoin d'aller plus loin ?</strong> Depuis la vue d'ensemble, vous pouvez descendre dans le détail d'un indicateur (graphique, historique, comparaison), aussi loin que vous le souhaitez.</p>
       </div>
     </section>
 
-    <!-- ============ SECTION 4 : MON APPROCHE ============ -->
-    <section class="section section-alt" id="approche">
+    <!-- ============ SECTION 4 : EXEMPLES ============ -->
+    <section class="section section-alt" id="exemples">
       <div class="container">
-        <p class="eyebrow" data-i18n="approche_eyebrow">Mon approche</p>
-        <h2 data-i18n="approche_title">Une démarche en quatre étapes.</h2>
-        <ol class="steps">
-          <li class="step">
-            <span class="step-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="6"/><path d="m20 20-3.6-3.6"/></svg></span>
-            <span class="step-num">01</span>
-            <h3 data-i18n="step1_title">Audit des données existantes</h3>            <p data-i18n="step1_desc">Cartographie de ce qui existe : sources, formats, qualité. Identification des KPIs critiques pour votre activité.</p>
-          </li>
-          <li class="step">
-            <span class="step-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5.5" rx="7.5" ry="2.5"/><path d="M4.5 5.5v6c0 1.4 3.4 2.5 7.5 2.5s7.5-1.1 7.5-2.5v-6"/><path d="M4.5 11.5v6c0 1.4 3.4 2.5 7.5 2.5s7.5-1.1 7.5-2.5v-6"/></svg></span>
-            <span class="step-num">02</span>
-            <h3 data-i18n="step2_title">Structuration</h3>            <p data-i18n="step2_desc">Définition d'un schéma de données propre. Organisation des sources (Google Sheets, Excel local, OneDrive/SharePoint).</p>
-          </li>
-          <li class="step">
-            <span class="step-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20h18"/><path d="M6 20V12"/><path d="M11 20V6"/><path d="M16 20v-9"/><path d="M21 20V8"/></svg></span>
-            <span class="step-num">03</span>
-            <h3 data-i18n="step3_title">Construction du dashboard</h3>            <p data-i18n="step3_desc">Développement sur mesure : KPIs métier, visualisations adaptées, multi-langue natif (FR/EN/DE) si besoin.</p>
-          </li>
-          <li class="step">
-            <span class="step-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 16V3"/><path d="m7 8 5-5 5 5"/><path d="M4 13v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-6"/></svg></span>
-            <span class="step-num">04</span>
-            <h3 data-i18n="step4_title">Déploiement et formation</h3>            <p data-i18n="step4_desc">Mise en ligne sécurisée. Formation à l'utilisation et à la mise à jour des données.</p>
-          </li>
-        </ol>
-      </div>
-    </section>
-
-    <!-- ============ SECTION 5 : EXEMPLES ============ -->
-    <section class="section" id="exemples">
-      <div class="container">
-        <p class="eyebrow" data-i18n="exemples_eyebrow">Exemples concrets</p>
-        <h2 data-i18n="exemples_title">Trois dashboards de démonstration.</h2>
+        <p class="eyebrow" data-i18n="ex_eyebrow">Exemples concrets</p>
+        <h2 data-i18n="ex_title">Trois tableaux de bord de démonstration.</h2>
 
         <div class="example-banner">
-          <p data-i18n-html="exemples_banner_html">
-            Ces 3 dashboards sont des exemples concrets de ce que je sais produire.
-            Chacun est entièrement adaptable : KPIs, visualisations, onglets, sources de données,
-            langues, charte graphique. <strong>Votre dashboard final sera différent, taillé à vos besoins métier.</strong>
-            <br /><br />
-            <em>Captures ci-dessous : vues en mode TV plein écran. Les autres onglets de chaque dashboard sont disponibles sur demande.</em>
+          <p data-i18n-html="ex_banner">
+            Trois exemples de ce que je sais produire pour l'industrie. Chacun est entièrement adaptable.
+            <strong>Le vôtre sera différent, taillé à votre métier.</strong>
+            <br />Ces dashboards embarquent toutes les fonctionnalités et la connexion en temps réel à un tableur.
+             N'hésitez pas à me demander un essai ! 
+            <br />
+            <em>Captures en mode TV plein écran. Les autres onglets sont disponibles sur demande.</em>
           </p>
         </div>
 
@@ -299,186 +462,129 @@
 
           <article class="example">
             <div class="dashboard-mock dashboard-mock-sm dashboard-mock-img">
-              <div class="dm-chrome" style="padding: 5px 16px 1px"><span class="dm-dots"><i></i><i></i><i></i></span><span class="dm-url">Project Tracking</span></div>
-              <img class="dm-image" src="assets/dashboard-project.png?v=4" alt="Capture du dashboard Project Tracking" loading="lazy" width="1920" height="1080" />
+              <div class="dm-chrome" style="padding: 5px 16px 1px"><span class="dm-dots"><i></i><i></i><i></i></span><span class="dm-url">Production</span></div>
+              <img class="dm-image" src="assets/dashboard-production.png?v=4" alt="Capture du tableau de bord Production" loading="lazy" width="1920" height="1080" />
             </div>
-            <h3 data-i18n="example1_title">Dashboard Project Tracking</h3>
-            <p data-i18n="example1_desc">Suivi de projet : EVM (CPI, SPI, EAC), burndown, S-curve budget, jalons, équipe, risques.</p>
-            <ul class="example-tabs">
-              <li>Overview</li>
-              <li>Analytics</li>
-              <li>Milestones</li>
-            </ul>
-            <p class="example-note" data-i18n="example_note">Exemple. Adaptable à vos KPIs métier.</p>
+            <h3 data-i18n="ex1_title">Production</h3>
+            <p data-i18n="ex1_desc">Suivi qualité, réclamations clients et fournisseurs, sécurité, conformité, expéditions.</p>
+            <p class="example-note" data-i18n="ex_note">Exemple. Adaptable à vos indicateurs métier.</p>
           </article>
 
           <article class="example">
             <div class="dashboard-mock dashboard-mock-sm dashboard-mock-img">
               <div class="dm-chrome" style="padding: 5px 16px 1px"><span class="dm-dots"><i></i><i></i><i></i></span><span class="dm-url">Maintenance &amp; Fiabilité</span></div>
-              <img class="dm-image" src="assets/dashboard-maintenance.png?v=4" alt="Capture du dashboard Maintenance &amp; Fiabilité" loading="lazy" width="1920" height="1080" />
+              <img class="dm-image" src="assets/dashboard-maintenance.png?v=4" alt="Capture du tableau de bord Maintenance &amp; Fiabilité" loading="lazy" width="1920" height="1080" />
             </div>
-            <h3 data-i18n="example2_title">Dashboard Maintenance &amp; Fiabilité</h3>
-            <p data-i18n="example2_desc">MTBF, MTTR, disponibilité, alertes par règles, recommandations.</p>
-            <ul class="example-tabs">
-              <li>Overview</li>
-              <li>Reliability</li>
-              <li>Maintenance</li>
-              <li>Recommendations</li>
-            </ul>
-            <p class="example-note" data-i18n="example_note">Exemple. Adaptable à vos KPIs métier.</p>
+            <h3 data-i18n="ex2_title">Maintenance &amp; Fiabilité</h3>
+            <p data-i18n="ex2_desc">MTBF, MTTR, disponibilité, alertes par règles, recommandations de priorisation.</p>
+            <p class="example-note" data-i18n="ex_note">Exemple. Adaptable à vos indicateurs métier.</p>
           </article>
 
           <article class="example">
             <div class="dashboard-mock dashboard-mock-sm dashboard-mock-img">
-              <div class="dm-chrome" style="padding: 5px 16px 1px"><span class="dm-dots"><i></i><i></i><i></i></span><span class="dm-url">Production</span></div>
-              <img class="dm-image" src="assets/dashboard-production.png?v=4" alt="Capture du dashboard Production" loading="lazy" width="1920" height="1080" />
+              <div class="dm-chrome" style="padding: 5px 16px 1px"><span class="dm-dots"><i></i><i></i><i></i></span><span class="dm-url">Suivi de projet</span></div>
+              <img class="dm-image" src="assets/dashboard-project.png?v=4" alt="Capture du tableau de bord Suivi de projet" loading="lazy" width="1920" height="1080" />
             </div>
-            <h3 data-i18n="example3_title">Dashboard Production</h3>
-            <p data-i18n="example3_desc">Suivi qualité, réclamations clients et fournisseurs, sécurité, conformité, expéditions.</p>
-            <ul class="example-tabs">
-              <li>Dashboard</li>
-              <li>Detailed Analytics</li>
-            </ul>
-            <p class="example-note" data-i18n="example_note">Exemple. Adaptable à vos KPIs métier.</p>
+            <h3 data-i18n="ex3_title">Suivi de projet</h3>
+            <p data-i18n="ex3_desc">Avancement, valeur acquise (CPI, SPI, EAC), burndown, budget, jalons, équipe, risques.</p>
+            <p class="example-note" data-i18n="ex_note">Exemple. Adaptable à vos indicateurs métier.</p>
           </article>
 
         </div>
 
         <div class="demo-cta">
           <div class="demo-cta-text">
-            <h3 data-i18n="demo_title">Voir un dashboard en condition réelle</h3>
+            <h3 data-i18n="demo_title">Voir un tableau de bord en condition réelle</h3>
             <p data-i18n="demo_desc">
-              Sur demande, je peux vous donner un accès interactif à l'un de ces dashboards démo,
-              ainsi qu'à la source de données (Google Sheets) qui l'alimente. Vous voyez le fonctionnement global :
-              vous modifiez une cellule, le dashboard se met à jour. Vous voyez à quel point la mise à jour est simple.
+              Sur demande, je vous donne un accès interactif à l'un de ces tableaux de bord démo
+              et à la source de données (Google Sheets) qui l'alimente. Vous modifiez une cellule,
+              le tableau de bord se met à jour. Vous voyez à quel point c'est simple.
             </p>
           </div>
-          <a href="#contact" class="btn btn-primary" data-prefill="demo" data-i18n="demo_cta">
+          <a href="#contact" class="btn btn-primary" data-prefill="demo" data-i18n="demo_btn">
             Demander une démo interactive
           </a>
         </div>
       </div>
     </section>
 
-    <!-- ============ SECTION 6 : COMPARAISON ============ -->
-    <section class="section section-alt" id="pourquoi-custom">
+    <!-- ============ SECTION 5 : POURQUOI SUR-MESURE ============ -->
+    <section class="section" id="pourquoi-custom">
       <div class="container">
-        <p class="eyebrow" data-i18n="pourquoi_eyebrow">Comparaison</p>
-        <h2 data-i18n="pourquoi_title">Pourquoi pas un outil standard ?</h2>
-        <p class="body-text" data-i18n="pourquoi_intro">
-          Power BI, Monday, Jira - ces outils couvrent les cas généraux. Dès que vous voulez un vrai outil de pilotage adapté à votre métier, ils montrent leurs limites.
-        </p>
+        <p class="eyebrow" data-i18n="why_eyebrow">Pourquoi sur-mesure</p>
+        <h2 data-i18n="why_title">Pourquoi pas un outil standard ?</h2>
 
-        <p class="eyebrow" style="margin-top: var(--s-8);" data-i18n="pbi_section">Power BI / Tableau</p>
-        <div class="cards-grid">
-
-          <article class="card">
-            <h3 data-i18n="card1_title">Customisation visuelle bridée</h3>
-            <p data-i18n="card1_desc">Feux signaux conditionnels impossibles nativement, layout rigide, TV mode non pensé pour l'atelier. Pour chacun de ces cas, il faut bidouiller avec des visuels externes ou du DAX.</p>
-            <p class="card-tag" data-i18n="card1_tag">Sur-mesure : c'est du code, donc tout est possible dès la première version.</p>
+        <div class="args-grid args-why">
+          <article class="arg-card" role="button" tabindex="0" aria-expanded="false" aria-label="Personnalisation totale" data-i18n-aria-label="arg1_title">
+            <div class="arg-inner">
+              <div class="arg-face arg-front">
+                <span class="arg-num">1</span>
+                <span class="arg-bar"></span>
+                <span class="arg-toggle" aria-hidden="true">↻</span>
+                <h3 data-i18n="arg1_title">Personnalisation totale</h3>
+              </div>
+              <div class="arg-face arg-back">
+                <span class="arg-toggle" aria-hidden="true">↻</span>
+                <p class="arg-detail" data-i18n="arg1_detail">Feux conditionnels, layout d'atelier, mode TV plein écran : tout demande de bidouiller. Sur-mesure, c'est du code : tout est possible.</p>
+              </div>
+            </div>
           </article>
-
-          <article class="card">
-            <h3 data-i18n="card2_title">Multi-langue natif difficile</h3>
-            <p data-i18n="card2_desc">Power BI gère le multi-langue via des configurations complexes : rôles, traductions de modèles, jeux de données séparés. Vite un cauchemar à maintenir pour une équipe internationale.</p>
-            <p class="card-tag" data-i18n="card2_tag">Sur-mesure : bascule FR / EN / DE en 1 clic, traductions centralisées dans un fichier simple.</p>
+          <article class="arg-card" role="button" tabindex="0" aria-expanded="false" aria-label="Vos indicateurs métier" data-i18n-aria-label="arg2_title">
+            <div class="arg-inner">
+              <div class="arg-face arg-front">
+                <span class="arg-num">2</span>
+                <span class="arg-bar"></span>
+                <span class="arg-toggle" aria-hidden="true">↻</span>
+                <h3 data-i18n="arg2_title">Vos indicateurs métier</h3>
+              </div>
+              <div class="arg-face arg-back">
+                <span class="arg-toggle" aria-hidden="true">↻</span>
+                <p class="arg-detail" data-i18n="arg2_detail">MTBF, OEE, alertes selon vos règles : ces calculs métier n'existent pas dans les vues natives. Sur-mesure, chaque indicateur suit votre logique exacte.</p>
+              </div>
+            </div>
           </article>
-
-          <article class="card">
-            <h3 data-i18n="card3_title">Simplicité trompeuse dès les besoins réels</h3>
-            <p data-i18n="card3_desc">KPIs métier (OEE, MTBF, alertes conditionnelles), drilldowns personnalisés, intégration GMAO : tout ça demande du DAX avancé ou Power Automate. Simple pour un bar chart, pas pour un vrai outil de pilotage.</p>
-            <p class="card-tag" data-i18n="card3_tag">Sur-mesure : les besoins métier sont codés une fois pour toutes, sans bricolage.</p>
+          <article class="arg-card" role="button" tabindex="0" aria-expanded="false" aria-label="Vos données, vos fichiers" data-i18n-aria-label="arg3_title">
+            <div class="arg-inner">
+              <div class="arg-face arg-front">
+                <span class="arg-num">3</span>
+                <span class="arg-bar"></span>
+                <span class="arg-toggle" aria-hidden="true">↻</span>
+                <h3 data-i18n="arg3_title">Vos données, vos fichiers</h3>
+              </div>
+              <div class="arg-face arg-back">
+                <span class="arg-toggle" aria-hidden="true">↻</span>
+                <p class="arg-detail" data-i18n="arg3_detail">Pas de nouvelle plateforme à adopter. Vos équipes gardent leurs outils de saisie, vos données ne partent pas chez un éditeur tiers.</p>
+              </div>
+            </div>
           </article>
-
         </div>
 
-        <p class="eyebrow" style="margin-top: var(--s-8);" data-i18n="monday_section">Monday / Jira</p>
-        <div class="cards-grid">
-
-          <article class="card">
-            <p class="card-num">1</p>
-            <h3 data-i18n="monday1_title">KPIs métier vrais</h3>
-            <p data-i18n="monday1_intro">Monday et Jira gèrent des tâches. Leurs widgets de reporting ignorent les formules complexes.</p>
-            <ul>
-              <li data-i18n-html="monday1_item1_html"><strong>Indicateurs standard manquants :</strong> MTBF, OEE, SPI, EAC n'existent pas dans leurs vues natives.</li>
-              <li data-i18n-html="monday1_item2_html"><strong>Calculs métier impossibles :</strong> les widgets ne savent pas appliquer vos règles spécifiques.</li>
-              <li data-i18n-html="monday1_item3_html"><strong>Sur-mesure :</strong> chaque indicateur est construit sur votre logique exacte, pas sur ce que l'outil permet.</li>
-            </ul>
-            <p class="card-tag" data-i18n="monday1_tag">Vos indicateurs, pas ceux que l'outil vous impose.</p>
-          </article>
-
-          <article class="card">
-            <p class="card-num">2</p>
-            <h3 data-i18n="monday2_title">Vos données, vos fichiers</h3>
-            <p data-i18n="monday2_desc">Monday et Jira imposent que tout soit saisi dans leur outil. Migration de données, reconfiguration, nouvelles habitudes pour toute l'équipe.</p>
-            <ul>
-              <li data-i18n-html="monday2_item1_html"><strong>Pas de migration :</strong> on lit vos Excel et Google Sheets existants directement.</li>
-              <li data-i18n-html="monday2_item2_html"><strong>Pas de reconfiguration :</strong> vos équipes gardent leurs outils de saisie habituels.</li>
-              <li data-i18n-html="monday2_item3_html"><strong>Pas de dépendance :</strong> vos données restent dans vos fichiers, pas dans une plateforme tierce.</li>
-            </ul>
-            <p class="card-tag" data-i18n="monday2_tag">Vos données restent dans vos fichiers, pas chez un éditeur tiers.</p>
-          </article>
-
-          <article class="card" style="border-color: #bfdbfe; background: #eff6ff;">
-            <p class="card-num" style="background: #2163CA;">3</p>
-            <h3 style="color: #1d4ed8;" data-i18n="monday3_title">Complémentaire si vous l'utilisez déjà</h3>
-            <ul>
-              <li data-i18n="monday3_item1">Monday gère vos tâches, le dashboard pilote votre performance globale.</li>
-              <li data-i18n="monday3_item2">On peut se connecter directement à vos données Monday ou Jira via leur API.</li>
-              <li data-i18n="monday3_item3">Les deux coexistent sans friction, chacun dans son rôle.</li>
-            </ul>
-          </article>
-
-        </div>
-
-        <blockquote class="pull-quote" data-i18n="pull_quote">Ces outils sont conçus pour des millions d'usages différents. Un dashboard sur mesure est conçu pour un seul : le vôtre.</blockquote>
+        <blockquote class="pull-quote" data-i18n="pull_quote_2">Ces outils sont conçus pour des millions d'usages. Un tableau de bord sur mesure est conçu pour un seul : le vôtre.</blockquote>
       </div>
     </section>
 
-    <!-- ============ SECTION 7 : TARIFS ============ -->
-    <section class="section" id="tarifs">
+    <!-- ============ SECTION 6 : TARIFS ============ -->
+    <section class="section section-alt" id="tarifs">
       <div class="container">
         <p class="eyebrow" data-i18n="tarifs_eyebrow">Tarifs</p>
-        <h2 data-i18n="tarifs_title">Tarifs clairs, forfaitaires, sans surprise.</h2>
-
-        <p class="pricing-subtitle" data-i18n="pricing_setup_label">Mise en place</p>
-        <div class="pricing-grid cols-2">
-          <article class="price-card">
-            <h3 data-i18n="price_diag_title">Diagnostic Data</h3>
-            <p class="price-amount">490&nbsp;€</p>
-            <p data-i18n="price_diag_desc">Cartographie de vos données, identification des KPIs critiques, recommandations. Déduit du projet si vous lancez le build.</p>
-          </article>
-
-          <article class="price-card price-card-featured">
-            <span class="price-badge" data-i18n="featured_badge">Recommandé</span>
-            <h3 data-i18n="price_build_title">Build « Pilotage »</h3>
-            <p class="price-amount">1&nbsp;900&nbsp;€</p>
-            <p data-i18n="price_build_desc">Audit + 1 dashboard sur mesure + déploiement + formation.</p>
-            <p class="price-options" data-i18n-html="price_build_opts_html">Avec Assistant IA : <strong>2&nbsp;400&nbsp;€</strong> · Option on-premise : <strong>+350&nbsp;€</strong> · Dashboard supplémentaire : <strong>+1&nbsp;100&nbsp;€</strong></p>
-          </article>
-        </div>
-
-        <div class="maintenance">
-          <h3 data-i18n="abo_title">Abonnement mensuel (par dashboard)</h3>
-          <ul class="maintenance-list">
-            <li data-i18n-html="abo_cloud_html"><strong>Cloud · Pilotage : 120&nbsp;€/mois</strong><span>Hébergement géré, maintenance, évolutions.</span></li>
-            <li data-i18n-html="abo_cloud_ia_html"><strong>Cloud · Pilotage + IA : 180&nbsp;€/mois</strong><span>+ assistant IA et alertes intelligentes. Recommandé.</span></li>
-            <li data-i18n-html="abo_onprem_html"><strong>On-premise · Pilotage : 100&nbsp;€/mois</strong><span>Sur votre serveur, maintenance et évolutions.</span></li>
-            <li data-i18n-html="abo_onprem_ia_html"><strong>On-premise · Pilotage + IA : 160&nbsp;€/mois</strong><span>+ assistant IA (LLM cloud, agrégats seulement).</span></li>
-          </ul>
-        </div>
-
-        <p class="onprem-note" data-i18n="onprem_note">« Cloud » : hébergé et géré par mes soins, rien à installer chez vous. « On-premise » : installé sur vos propres serveurs, vos données ne quittent jamais votre entreprise.</p>
-
-        <p class="notice" data-i18n-html="tarifs_notice_html">
-          Assistant IA 100&nbsp;% local (LLM hébergé chez vous) : sur demande, sur devis. · Intervention hors forfait : 80&nbsp;€/h. · Périmètre spécifique (sources multiples, connecteur métier) : sur devis, 400&nbsp;€/j.
+        <h2 data-i18n="tarifs_title">Un tarif simple et transparent.</h2>
+        <p class="body-text" style="max-width: 1000px;" data-i18n-html="tarifs_p1">
+          Mon taux journalier est de 300 €. Un projet de pilotage type représente environ entre 5 et 10 jours
+          de travail : vous avez alors votre projet de pilotage complet <strong>entre 1 500 € et 3 000 €</strong>.
+          Tout se fait sur devis, en fonction de vos besoins.
         </p>
-        <p class="tax-note" data-i18n="tarifs_tax">Tarifs en euros. TVA non applicable (régime de la franchise en base).</p>
+
+        <p class="body-text" style="max-width: 1000px; margin-top: var(--s-6, 28px);" data-i18n-html="tarifs_p2">
+          Ensuite, l'hébergement, la maintenance et les évolutions sont assurés par abonnement,
+          <strong>à partir de 100 € par mois et par tableau de bord</strong>. Le détail des formules
+          (cloud ou sur vos serveurs, avec ou sans assistant IA) est présenté dans la brochure, sur simple demande.
+        </p>
+        <p class="tax-note" data-i18n="tarifs_tax">Tarifs en euros, hors périmètre spécifique (sources multiples, connecteur métier sur devis). TVA non applicable (régime de la franchise en base).</p>
       </div>
     </section>
 
-    <!-- ============ SECTION 8 : QUI SUIS-JE ============ -->
-    <section class="section section-alt" id="a-propos">
+    <!-- ============ SECTION 7 : QUI SUIS-JE ============ -->
+    <section class="section" id="a-propos">
       <div class="container about-grid">
         <div class="about-photo">
           <div class="about-photo-frame">
@@ -486,32 +592,32 @@
           </div>
         </div>
         <div class="about-text">
-          <p class="eyebrow" data-i18n="apropos_eyebrow">Qui suis-je</p>
-          <h2 data-i18n="apropos_title">Antonio Laisé, ingénieur data &amp; fiabilité.</h2>
-          <p data-i18n="apropos_p1">
-            Ingénieur mécanique de l'UTC, spécialité Data &amp; Fiabilité pour l'Industrie.
+          <p class="eyebrow" data-i18n="about_eyebrow">Qui suis-je</p>
+          <h2 data-i18n="about_title">Antonio Laisé, ingénieur data &amp; fiabilité.</h2>
+          <p data-i18n="about_p1">
+            Ingénieur mécanique de l'UTC Compiègne, spécialité Data &amp; Fiabilité pour l'industrie.
             Basé à Hanovre, j'interviens en France et en Allemagne.
           </p>
-          <p data-i18n="apropos_p2">
-            Mes expériences industrielles : Nexans Hanovre (optimisation de process industriel,
-            tableaux de bord opérationnels) et EDF génie civil nucléaire (étude de prédictabilité
-            des fuites dans les structures en béton, analyse d'un nouveau code de construction).
+          <p data-i18n="about_p2">
+            Chez Nexans Hanovre, j'ai optimisé des procédés et construit les tableaux de bord qui servaient
+            au pilotage quotidien de l'atelier. Avant, chez EDF en génie civil nucléaire, des études de fiabilité
+            sur les structures béton. Ce que je propose, je l'ai d'abord fait en usine.
           </p>
-          <p class="about-pitch" data-i18n="apropos_pitch">Ce qui m'anime dans le travail : organiser des données, simplifier des processus qui s'enlisent, automatiser ce qui peut l'être, réduire le temps passé sur les tâches répétitives. C'est ce que je viens chercher dans chaque mission.</p>
+          <p class="about-pitch" data-i18n="about_pitch">Organiser des données, simplifier ce qui s'enlise, automatiser le répétitif, faire gagner du temps. C'est ce que je viens chercher dans chaque mission.</p>
           <p>
-            <a href="https://antonio-laise.netlify.app/" target="_blank" rel="noopener" class="link link-cv" data-i18n="apropos_cv">Voir mon CV en ligne →</a>
+            <a href="https://antonio-laise.netlify.app/" target="_blank" rel="noopener" class="link link-cv" data-i18n="about_cv">Voir mon CV en ligne →</a>
           </p>
         </div>
       </div>
     </section>
 
-    <!-- ============ SECTION 9 : CONTACT ============ -->
-    <section class="section" id="contact">
+    <!-- ============ SECTION 8 : CONTACT ============ -->
+    <section class="section section-alt" id="contact">
       <div class="container narrow">
         <p class="eyebrow" data-i18n="contact_eyebrow">Contact</p>
         <h2 data-i18n="contact_title">Échangeons 30 minutes.</h2>
-        <p class="body-text" data-i18n="contact_body">Décrivez votre besoin en quelques mots. Je reviens vers vous sous 24 heures ouvrées pour caler un échange.</p>
-        <p class="body-text" data-i18n="contact_brochure" style="font-weight:600">Vous voulez plus de détails sur mon offre ? Une brochure complète est disponible sur simple demande.</p>
+        <p class="body-text" data-i18n="contact_p1">Décrivez votre besoin en quelques mots. Je reviens vers vous sous 24 heures ouvrées pour caler un échange.</p>
+        <p class="body-text" style="font-weight:600" data-i18n="contact_brochure">Vous voulez le détail de mon offre ? Une brochure complète est disponible sur simple demande.</p>
 
         <!-- Formulaire statique caché : sert uniquement à la détection Netlify Forms au déploiement. Le formulaire visible ci-dessous envoie en AJAX (form-name=contact). -->
         <form name="contact" data-netlify="true" netlify-honeypot="bot-field" hidden aria-hidden="true">
@@ -559,7 +665,7 @@
             </label>
             <label class="radio">
               <input type="radio" name="need" value="dashboard" />
-              <span data-i18n="need_dashboard">Créer un dashboard</span>
+              <span data-i18n="need_dashboard">Créer un tableau de bord</span>
             </label>
             <label class="radio">
               <input type="radio" name="need" value="indecis" />
@@ -573,17 +679,17 @@
           </div>
 
           <div class="field">
-            <label for="message" data-i18n-html="label_message_html">Message <span class="field-optional">(optionnel)</span></label>
+            <label for="message" data-i18n-html="label_message">Message <span class="field-optional">(optionnel)</span></label>
             <textarea id="message" name="message" rows="4" placeholder="Décrivez brièvement votre contexte ou votre besoin." data-i18n-placeholder="placeholder_message"></textarea>
           </div>
 
-          <button type="submit" class="btn btn-primary btn-block" data-i18n="submit_button">Envoyer ma demande</button>
+          <button type="submit" class="btn btn-primary btn-block" data-i18n="submit_btn">Envoyer ma demande</button>
         </form>
 
-        <p id="form-success" data-i18n="contact_success" hidden style="margin-top:18px;padding:14px 16px;border-radius:10px;background:#eaf7ef;border:1px solid #bfe6cd;color:#1f7a3d;font-weight:600;">Merci, votre demande a bien été envoyée. Je reviens vers vous sous 24 heures ouvrées.</p>
-        <p id="form-error" data-i18n="contact_error" hidden style="margin-top:14px;padding:12px 16px;border-radius:10px;background:#fdeeee;border:1px solid #f3c9c9;color:#b3322c;">Une erreur est survenue lors de l'envoi. Réessayez, ou écrivez-moi directement par email.</p>
+        <p id="form-success" data-i18n="form_success" hidden style="margin-top:18px;padding:14px 16px;border-radius:10px;background:#eaf7ef;border:1px solid #bfe6cd;color:#1f7a3d;font-weight:600;">Merci, votre demande a bien été envoyée. Je reviens vers vous sous 24 heures ouvrées.</p>
+        <p id="form-error" data-i18n="form_error" hidden style="margin-top:14px;padding:12px 16px;border-radius:10px;background:#fdeeee;border:1px solid #f3c9c9;color:#b3322c;">Une erreur est survenue lors de l'envoi. Réessayez, ou écrivez-moi directement par email.</p>
 
-        <p class="alt-cta" data-i18n-html="alt_cta_html">
+        <p class="alt-cta" data-i18n-html="alt_cta">
           Ou <a href="https://cal.eu/antoniolaise" target="_blank" rel="noopener" class="link">prenez directement RDV →</a>
         </p>
       </div>
@@ -616,37 +722,37 @@
   <div class="modal" id="modal-mentions" hidden>
     <div class="modal-inner">
       <button class="modal-close" data-close aria-label="Fermer">×</button>
-      <h2 data-i18n="modal_mentions_title">Mentions légales</h2>
+      <h2 data-i18n="mentions_title">Mentions légales</h2>
 
-      <h3 data-i18n="modal_mentions_h1">Éditeur du site</h3>
-      <p data-i18n-html="modal_mentions_editor_html">
+      <h3 data-i18n="mentions_h1">Éditeur du site</h3>
+      <p data-i18n-html="mentions_editor">
         Antonio Laisé<br />
-        Conseil indépendant en structuration de données et dashboards sur mesure<br />
+        Conseil indépendant en structuration de données et tableaux de bord sur mesure<br />
         Hanovre, Allemagne<br />
         Contact : <a href="mailto:antonio.laise.pro@gmail.com" class="link">antonio.laise.pro@gmail.com</a>
       </p>
-      <p data-i18n="modal_mentions_placeholder">
+      <p data-i18n="mentions_status">
         Statut juridique en cours de constitution. La forme juridique, le numéro d'immatriculation (SIRET ou Steuernummer) et l'adresse professionnelle seront ajoutés dès la finalisation de la structure.
       </p>
 
-      <h3 data-i18n="modal_mentions_h2">Directeur de publication</h3>
-      <p data-i18n="modal_mentions_director">Antonio Laisé</p>
+      <h3 data-i18n="mentions_h2">Directeur de publication</h3>
+      <p data-i18n="mentions_director">Antonio Laisé</p>
 
-      <h3 data-i18n="modal_mentions_h3">Hébergeur</h3>
-      <p data-i18n-html="modal_mentions_host_html">
+      <h3 data-i18n="mentions_h3">Hébergeur</h3>
+      <p data-i18n-html="mentions_host">
         Netlify, Inc.<br />
         512 2nd Street, Suite 200, San Francisco, CA 94107, États-Unis<br />
         <a href="https://www.netlify.com" target="_blank" rel="noopener" class="link">www.netlify.com</a>
       </p>
 
-      <h3 data-i18n="modal_mentions_h4">Propriété intellectuelle</h3>
-      <p data-i18n="modal_mentions_ip">
+      <h3 data-i18n="mentions_h4">Propriété intellectuelle</h3>
+      <p data-i18n="mentions_ip">
         L'ensemble du contenu de ce site (textes, images, captures d'écran, code) est la propriété d'Antonio Laisé,
         sauf mention contraire. Toute reproduction sans autorisation préalable est interdite.
       </p>
 
-      <h3 data-i18n="modal_mentions_h5">Crédits</h3>
-      <p data-i18n-html="modal_mentions_credits_html">
+      <h3 data-i18n="mentions_h5">Crédits</h3>
+      <p data-i18n-html="mentions_credits">
         Site développé par Antonio Laisé en HTML, CSS et JavaScript.<br />
         Polices : Inter et JetBrains Mono (Google Fonts).
       </p>
@@ -656,59 +762,59 @@
   <div class="modal" id="modal-privacy" hidden>
     <div class="modal-inner">
       <button class="modal-close" data-close aria-label="Fermer">×</button>
-      <h2 data-i18n="modal_privacy_title">Politique de confidentialité</h2>
+      <h2 data-i18n="privacy_title">Politique de confidentialité</h2>
 
-      <p data-i18n="modal_privacy_intro">
+      <p data-i18n="privacy_intro">
         Cette politique décrit les données personnelles collectées sur ce site, leur finalité, leur durée
         de conservation et vos droits, conformément au Règlement Général sur la Protection des Données (RGPD).
       </p>
 
-      <h3 data-i18n="modal_privacy_h1">Données collectées via le formulaire de contact</h3>
-      <p data-i18n="modal_privacy_form_intro">
+      <h3 data-i18n="privacy_h1">Données collectées via le formulaire de contact</h3>
+      <p data-i18n="privacy_form_intro">
         Lorsque vous remplissez le formulaire de contact, les informations suivantes sont collectées :
       </p>
       <ul>
-        <li data-i18n="modal_privacy_form_li1">Prénom et nom</li>
-        <li data-i18n="modal_privacy_form_li2">Nom de votre entreprise</li>
-        <li data-i18n="modal_privacy_form_li3">Email ou numéro de téléphone</li>
-        <li data-i18n="modal_privacy_form_li4">Nature de votre besoin (structurer mes données, créer un dashboard, indécis)</li>
-        <li data-i18n="modal_privacy_form_li5">Message libre (optionnel)</li>
+        <li data-i18n="privacy_li1">Prénom et nom</li>
+        <li data-i18n="privacy_li2">Nom de votre entreprise</li>
+        <li data-i18n="privacy_li3">Email ou numéro de téléphone</li>
+        <li data-i18n="privacy_li4">Nature de votre besoin (structurer mes données, créer un tableau de bord, indécis)</li>
+        <li data-i18n="privacy_li5">Message libre (optionnel)</li>
       </ul>
-      <p data-i18n-html="modal_privacy_purpose_html">
+      <p data-i18n-html="privacy_purpose">
         <strong>Finalité</strong> : traiter votre demande de contact et vous recontacter sous 24 heures ouvrées.<br />
         <strong>Base légale</strong> : votre consentement explicite (envoi volontaire du formulaire).<br />
         <strong>Durée de conservation</strong> : 12 mois à compter de votre dernier contact, sauf relation commerciale active.
       </p>
 
-      <h3 data-i18n="modal_privacy_h2">Sous-traitant : Netlify Forms</h3>
-      <p data-i18n="modal_privacy_netlify">
+      <h3 data-i18n="privacy_h2">Sous-traitant : Netlify Forms</h3>
+      <p data-i18n="privacy_netlify">
         Les soumissions du formulaire sont traitées et stockées par Netlify, Inc. (États-Unis) via leur service Netlify Forms.
         Netlify est certifié conforme au cadre Data Privacy Framework UE-États-Unis.
       </p>
 
-      <h3 data-i18n="modal_privacy_h3">Mesure d'audience</h3>
-      <p data-i18n="modal_privacy_umami">
+      <h3 data-i18n="privacy_h3">Mesure d'audience</h3>
+      <p data-i18n="privacy_analytics">
         Aucun outil de mesure d'audience n'est actuellement actif sur ce site. Si un outil respectueux de la vie privée (sans cookie ni donnée personnelle identifiable) est ajouté à l'avenir, cette politique sera mise à jour.
       </p>
 
-      <h3 data-i18n="modal_privacy_h4">Cookies</h3>
-      <p data-i18n="modal_privacy_cookies">
+      <h3 data-i18n="privacy_h4">Cookies</h3>
+      <p data-i18n="privacy_cookies">
         Ce site n'utilise aucun cookie de suivi ou publicitaire. Aucun consentement préalable n'est donc requis.
       </p>
 
-      <h3 data-i18n="modal_privacy_h5">Vos droits</h3>
-      <p data-i18n-html="modal_privacy_rights_html">
+      <h3 data-i18n="privacy_h5">Vos droits</h3>
+      <p data-i18n-html="privacy_rights">
         Conformément au RGPD, vous disposez d'un droit d'accès, de rectification, d'effacement, de portabilité
         et d'opposition concernant vos données. Pour exercer ces droits, contactez-moi par email à
         <a href="mailto:antonio.laise.pro@gmail.com" class="link">antonio.laise.pro@gmail.com</a>.
       </p>
-      <p data-i18n="modal_privacy_cnil">
+      <p data-i18n="privacy_cnil">
         Vous pouvez également introduire une réclamation auprès de la CNIL (France) ou du BfDI (Allemagne) si vous
         estimez que vos droits ne sont pas respectés.
       </p>
 
-      <h3 data-i18n="modal_privacy_h6">Mise à jour</h3>
-      <p data-i18n="modal_privacy_update">Cette politique peut être mise à jour. La date de dernière mise à jour : mai 2026.</p>
+      <h3 data-i18n="privacy_h6">Mise à jour</h3>
+      <p data-i18n="privacy_update">Cette politique peut être mise à jour. La date de dernière mise à jour : juin 2026.</p>
     </div>
   </div>
 
@@ -730,7 +836,7 @@
     <span class="lightbox-counter"></span>
   </div>
 
-  <script src="i18n.js?v=6"></script>
-  <script src="main.js?v=2"></script>
+  <script src="i18n.js?v=7"></script>
+  <script src="main.js?v=3"></script>
 </body>
 </html>

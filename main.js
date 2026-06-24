@@ -147,6 +147,22 @@
     });
   });
 
+  /* ---------- Cartes arguments (déplier le détail au clic) ---------- */
+  const argCards = document.querySelectorAll('.arg-card');
+  argCards.forEach((card) => {
+    const toggle = () => {
+      const open = card.classList.toggle('is-open');
+      card.setAttribute('aria-expanded', open ? 'true' : 'false');
+    };
+    card.addEventListener('click', toggle);
+    card.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        toggle();
+      }
+    });
+  });
+
   /* ---------- Modales ---------- */
   const modalTriggers = document.querySelectorAll('[data-modal]');
   const modalCloses = document.querySelectorAll('[data-close]');
