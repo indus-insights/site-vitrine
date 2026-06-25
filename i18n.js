@@ -105,7 +105,7 @@
 
       tarifs_eyebrow: "Tarifs",
       tarifs_title: "Un tarif simple et transparent.",
-      tarifs_p1: "Mon taux journalier est de 300 €. Un projet de pilotage type représente environ entre 5 et 10 jours de travail : vous avez alors votre projet de pilotage complet <strong>entre 1 500 € et 3 000 €</strong>. Tout se fait sur devis, en fonction de vos besoins.",
+      tarifs_p1: "Tout commence par un audit à <strong>490 €</strong> : je viens passer une journée avec vous pour découvrir votre activité et analyser vos besoins. Cet audit est remboursé si vous lancez le projet. Le projet de pilotage est ensuite un <strong>forfait sur mesure</strong>, défini selon votre contexte.",
       tarifs_p2: "Ensuite, l'hébergement, la maintenance et les évolutions sont assurés par abonnement, <strong>à partir de 100 € par mois et par tableau de bord</strong>. Le détail des formules (cloud ou sur vos serveurs, avec ou sans assistant IA) est présenté dans la brochure, sur simple demande.",
       tarifs_tax: "Tarifs en euros, hors périmètre spécifique (sources multiples, connecteur métier sur devis). TVA non applicable (régime de la franchise en base).",
 
@@ -271,7 +271,7 @@
 
       tarifs_eyebrow: "Pricing",
       tarifs_title: "Simple, transparent pricing.",
-      tarifs_p1: "My day rate is €300. A typical steering project represents roughly 5 to 10 days of work: your complete steering project then costs <strong>between €1,500 and €3,000</strong>. Everything is quoted according to your needs.",
+      tarifs_p1: "It all starts with a <strong>€490</strong> audit: I spend a day with you to discover your business and analyse your needs. The audit is refunded if you proceed. The steering project is then a <strong>tailored package</strong>, defined according to your context.",
       tarifs_p2: "Then hosting, maintenance and improvements are covered by subscription, <strong>from €100 per month and per dashboard</strong>. The detail of the plans (cloud or on your servers, with or without AI assistant) is in the brochure, on request.",
       tarifs_tax: "Prices in euros, excluding specific scope (multiple sources, business connector on quote). VAT not applicable (small-business scheme).",
 
@@ -437,7 +437,7 @@
 
       tarifs_eyebrow: "Preise",
       tarifs_title: "Einfache, transparente Preise.",
-      tarifs_p1: "Mein Tagessatz beträgt 300 €. Ein typisches Steuerungsprojekt umfasst etwa 5 bis 10 Arbeitstage: Ihr vollständiges Steuerungsprojekt kostet dann <strong>zwischen 1.500 € und 3.000 €</strong>. Alles wird nach Ihrem Bedarf angeboten.",
+      tarifs_p1: "Alles beginnt mit einem Audit zu <strong>490 €</strong>: Ich verbringe einen Tag bei Ihnen, um Ihre Tätigkeit kennenzulernen und Ihren Bedarf zu analysieren. Das Audit wird bei Beauftragung erstattet. Das Steuerungsprojekt ist dann ein <strong>maßgeschneidertes Paket</strong>, je nach Kontext.",
       tarifs_p2: "Hosting, Wartung und Weiterentwicklungen erfolgen anschließend per Abonnement, <strong>ab 100 € pro Monat und pro Dashboard</strong>. Die Details der Pakete (Cloud oder auf Ihren Servern, mit oder ohne KI-Assistent) finden Sie in der Broschüre, auf Anfrage.",
       tarifs_tax: "Preise in Euro, ohne speziellen Umfang (mehrere Quellen, Fachkonnektor auf Anfrage). Umsatzsteuer nicht ausgewiesen (Kleinunternehmerregelung).",
 
