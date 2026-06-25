@@ -29,7 +29,7 @@
       prob_eyebrow: "Le problème",
       prob_title: "Beaucoup de données, peu de visibilité.",
       prob_p1: "Dans beaucoup d'entreprises, les employés perdent du temps car les données sont éparpillées, les formats ne sont pas standardisés, les responsabilités mal définies. La situation d'ensemble est souvent devinée mais rarement visualisée et chiffrée.",
-      prob_p2: "Power BI et Tableau sont pensés pour les grands groupes et leurs équipes data, pas pour un atelier qui veut un outil simple, taillé pour son métier.",
+      
 
       sol_eyebrow: "Ce que je fais, la solution !",
       step1_title: "Trouver la donnée",
@@ -196,7 +196,6 @@
       prob_eyebrow: "The problem",
       prob_title: "Plenty of data, little visibility.",
       prob_p1: "In many companies, staff lose time because data is scattered, formats aren't standardised and responsibilities are unclear. The overall picture is often guessed, rarely visualised and quantified.",
-      prob_p2: "Power BI and Tableau are built for large groups and their data teams, not for a workshop that wants a simple tool tailored to its business.",
 
       sol_eyebrow: "What I do, the solution!",
       step1_title: "Find the data",
@@ -363,7 +362,6 @@
       prob_eyebrow: "Das Problem",
       prob_title: "Viele Daten, wenig Überblick.",
       prob_p1: "In vielen Unternehmen verlieren Mitarbeiter Zeit, weil Daten verstreut sind, Formate nicht standardisiert und Zuständigkeiten unklar sind. Das Gesamtbild wird oft nur erahnt, selten visualisiert und in Zahlen gefasst.",
-      prob_p2: "Power BI und Tableau sind für große Konzerne und deren Datenteams gemacht, nicht für einen Betrieb, der ein einfaches, auf sein Geschäft zugeschnittenes Werkzeug will.",
 
       sol_eyebrow: "Was ich mache, die Lösung!",
       step1_title: "Die Daten finden",
