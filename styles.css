@@ -1590,6 +1590,32 @@ a:hover { color: var(--c-primary-dark); }
 @media (max-width: 520px) { .feature-chips { grid-template-columns: 1fr; } }
 .feature-ai-note { font-weight: 400; font-size: 14px; color: #64748b; }
 
+/* Fonctionnalités cliquables : clarification en popover au clic.
+   L'état au repos est inchangé (le "+" et le panneau sont en position absolue,
+   donc ils ne modifient ni la taille ni la disposition des chips). */
+.features-eyebrow { margin-top: 44px; }
+.feature.has-clarif { position: relative; cursor: pointer; }
+.feature.has-clarif:focus-visible { outline: 2px solid var(--c-primary); outline-offset: 3px; }
+/* La carte ouverte (et donc son popover) passe au-dessus des cartes voisines,
+   pour que le texte soit toujours lisible et jamais masqué par la carte du dessous. */
+.feature.has-clarif.is-open { z-index: 40; }
+.feature-pop {
+  position: absolute; top: calc(100% + 9px); left: 0; right: 0; z-index: 41;
+  background: #fff; border: 1px solid var(--c-primary);
+  border-radius: var(--radius-sm); padding: 13px 15px;
+  box-shadow: 0 14px 34px rgba(15, 23, 42, .16);
+  opacity: 0; visibility: hidden; transform: translateY(-6px);
+  transition: opacity .18s var(--ease), transform .18s var(--ease), visibility .18s var(--ease);
+}
+.feature.has-clarif.is-open .feature-pop { opacity: 1; visibility: visible; transform: translateY(0); }
+.feature-pop::before {
+  content: ""; position: absolute; top: -6px; left: 22px;
+  width: 11px; height: 11px; background: #fff;
+  border-left: 1px solid var(--c-primary); border-top: 1px solid var(--c-primary);
+  transform: rotate(45deg);
+}
+.feature-pop p { margin: 0; font-size: 13.5px; line-height: 1.5; color: var(--c-text-muted); }
+
 /* À propos : aligner le haut de la photo avec le titre (sous l'eyebrow) */
 @media (min-width: 820px) {
   #a-propos .about-photo { margin-top: 40px; }

@@ -163,6 +163,36 @@
     });
   });
 
+  /* ---------- Cartes fonctionnalités (clarification en popover au clic) ---------- */
+  const featCards = document.querySelectorAll('.feature.has-clarif');
+  const closeFeats = (except) => {
+    featCards.forEach((c) => {
+      if (c !== except) {
+        c.classList.remove('is-open');
+        c.setAttribute('aria-expanded', 'false');
+      }
+    });
+  };
+  featCards.forEach((card) => {
+    const toggle = () => {
+      const willOpen = !card.classList.contains('is-open');
+      closeFeats(card);          // un seul popover ouvert à la fois
+      card.classList.toggle('is-open', willOpen);
+      card.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+    };
+    card.addEventListener('click', (e) => { e.stopPropagation(); toggle(); });
+    card.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); }
+    });
+  });
+  // Clic en dehors ou Échap : on referme le popover ouvert.
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.feature.has-clarif')) closeFeats(null);
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeFeats(null);
+  });
+
   /* ---------- Modales ---------- */
   const modalTriggers = document.querySelectorAll('[data-modal]');
   const modalCloses = document.querySelectorAll('[data-close]');

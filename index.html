@@ -27,7 +27,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" />
-  <link rel="stylesheet" href="styles.css?v=7" />
+  <link rel="stylesheet" href="styles.css?v=8" />
 
   <!-- Refonte juin 2026 : ciblage PME industrielles, multilingue FR/EN/DE actif via i18n.js. -->
 </head>
@@ -163,18 +163,18 @@
               <span class="mac-dot red"></span>
               <span class="mac-dot yellow"></span>
               <span class="mac-dot green"></span>
-              <span class="sheet-titlebar-title">Suivi_Projet.xlsx</span>
+              <span class="sheet-titlebar-title" data-i18n="sheet_file">Suivi_Projet.xlsx</span>
             </div>
             <table class="sheet-grid">
               <thead>
                 <tr><th></th><th>A</th><th>B</th></tr>
               </thead>
               <tbody>
-                <tr><th>1</th><td>Date_Début</td><td class="sheet-num">01/01/2026</td></tr>
-                <tr><th>2</th><td>Fin_Prévue</td><td class="sheet-num">30/06/2026</td></tr>
-                <tr><th>3</th><td>Fin_Estimée</td><td class="sheet-num">15/07/2026</td></tr>
-                <tr><th>4</th><td>Tâches_Total</td><td class="sheet-num">50</td></tr>
-                <tr><th>5</th><td>Tâches_Faites</td><td class="sheet-num">36</td></tr>
+                <tr><th>1</th><td data-i18n="sheet_r1">Date_Début</td><td class="sheet-num">01/01/2026</td></tr>
+                <tr><th>2</th><td data-i18n="sheet_r2">Fin_Prévue</td><td class="sheet-num">30/06/2026</td></tr>
+                <tr><th>3</th><td data-i18n="sheet_r3">Fin_Estimée</td><td class="sheet-num">15/07/2026</td></tr>
+                <tr><th>4</th><td data-i18n="sheet_r4">Tâches_Total</td><td class="sheet-num">50</td></tr>
+                <tr><th>5</th><td data-i18n="sheet_r5">Tâches_Faites</td><td class="sheet-num">36</td></tr>
               </tbody>
             </table>
           </div>
@@ -260,51 +260,52 @@
 
         <blockquote class="pull-quote" data-i18n="pull_quote_1">Un tableau de bord n'est pas un rapport à produire en fin de mois. C'est un instrument de pilotage qui lit vos fichiers en continu et signale les écarts dès qu'ils apparaissent.</blockquote>
 
-        <!-- Capacités clés : icône + titre seuls -->
+        <!-- Fonctionnalités : icône + titre, clarification au clic (popover) -->
+        <p class="eyebrow features-eyebrow" data-i18n="features_eyebrow">Fonctionnalités</p>
         <div class="solution-grid feature-chips">
-          <article class="feature">
+          <article class="feature has-clarif" role="button" tabindex="0" aria-expanded="false">
             <div class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h6"/><path d="M14 6h6"/><circle cx="12" cy="6" r="2"/><path d="M4 12h2"/><path d="M10 12h10"/><circle cx="8" cy="12" r="2"/><path d="M4 18h10"/><path d="M18 18h2"/><circle cx="16" cy="18" r="2"/></svg></div>
-            <h3 data-i18n="feat1">Conçu sur mesure pour votre métier</h3>
+            <h3 data-i18n="feat1">Conçu sur mesure pour votre métier</h3>            <div class="feature-pop"><p data-i18n="feat1_d">Pas un modèle générique adapté à la va-vite. Chaque indicateur et chaque vue sont pensés pour vos opérations et votre vocabulaire.</p></div>
           </article>
 
-          <article class="feature">
+          <article class="feature has-clarif" role="button" tabindex="0" aria-expanded="false">
             <div class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 0 1-15.6 6.1"/><path d="M3 12A9 9 0 0 1 18.6 5.9"/><path d="M18 3v4h-4"/><path d="M6 21v-4h4"/></svg></div>
-            <h3 data-i18n="feat2">Connecté à vos sources existantes</h3>
+            <h3 data-i18n="feat2">Connecté à vos sources existantes</h3>            <div class="feature-pop"><p data-i18n="feat2_d">Excel, Google Sheets, vos exports : le tableau de bord lit vos fichiers là où ils sont. Vos équipes ne changent rien à leur façon de saisir.</p></div>
           </article>
 
-          <article class="feature">
+          <article class="feature has-clarif" role="button" tabindex="0" aria-expanded="false">
             <div class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="8" height="8" rx="1.5"/><rect x="13" y="3" width="8" height="5" rx="1.5"/><rect x="3" y="13" width="8" height="8" rx="1.5"/><rect x="13" y="10" width="8" height="11" rx="1.5"/></svg></div>
-            <h3 data-i18n="feat3">Indicateurs calculés automatiquement</h3>
+            <h3 data-i18n="feat3">Indicateurs calculés automatiquement</h3>            <div class="feature-pop"><p data-i18n="feat3_d">Vous saisissez des données brutes, le tableau de bord calcule le reste : taux, écarts, moyennes, tendances. Plus aucune formule à maintenir à la main.</p></div>
           </article>
 
-          <article class="feature">
+          <article class="feature has-clarif" role="button" tabindex="0" aria-expanded="false">
             <div class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="1" fill="currentColor" stroke="none"/></svg></div>
-            <h3 data-i18n="feat4">Seuils visuels configurables</h3>
+            <h3 data-i18n="feat4">Seuils visuels configurables</h3>            <div class="feature-pop"><p data-i18n="feat4_d">Vert, orange, rouge selon vos propres limites. Vous fixez les seuils dans votre fichier, sans m'appeler, et l'affichage se met à jour.</p></div>
           </article>
 
-          <article class="feature">
+          <article class="feature has-clarif" role="button" tabindex="0" aria-expanded="false">
             <div class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></div>
-            <h3 data-i18n="feat5">Alertes et rapports par email</h3>
+            <h3 data-i18n="feat5">Alertes et rapports par email</h3>            <div class="feature-pop"><p data-i18n="feat5_d">Un seuil dépassé déclenche une alerte automatique. Et un rapport de synthèse part à qui vous voulez, au rythme choisi (chaque lundi, par exemple).</p></div>
           </article>
 
-          <article class="feature">
+          <article class="feature has-clarif" role="button" tabindex="0" aria-expanded="false">
             <div class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m7 14 4-5 3 3 5-7"/><path d="M19 5v3h-3"/></svg></div>
-            <h3 data-i18n="feat6">Historique et tendances</h3>
+            <h3 data-i18n="feat6">Historique et tendances</h3>            <div class="feature-pop"><p data-i18n="feat6_d">Chaque jour, l'état de vos indicateurs est enregistré. Vous suivez l'évolution sur 30, 60 ou 90 jours et repérez les dérives avant qu'elles ne s'installent.</p></div>
           </article>
 
-          <article class="feature">
+          <article class="feature has-clarif" role="button" tabindex="0" aria-expanded="false">
             <div class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3.5 12h17"/><path d="M12 3a14 14 0 0 1 0 18"/><path d="M12 3a14 14 0 0 0 0 18"/></svg></div>
-            <h3 data-i18n="feat7">Multi-langue natif</h3>
+            <h3 data-i18n="feat7">Multi-langue natif</h3>            <div class="feature-pop"><p data-i18n="feat7_d">Le même tableau de bord en français, anglais et allemand, d'un clic. Pratique pour une équipe internationale ou une maison mère à l'étranger.</p></div>
           </article>
 
-          <article class="feature">
+          <article class="feature has-clarif" role="button" tabindex="0" aria-expanded="false">
             <div class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="14" height="10" rx="1.5"/><path d="M6 18h6"/><path d="M9 14v4"/><rect x="17" y="9" width="5" height="11" rx="1.5"/></svg></div>
-            <h3 data-i18n="feat8">Accessible sur tout écran</h3>
+            <h3 data-i18n="feat8">Accessible sur tout écran</h3>            <div class="feature-pop"><p data-i18n="feat8_d">Ordinateur, tablette, smartphone, écran d'atelier : l'affichage s'adapte. Vos chiffres vous suivent partout.</p></div>
           </article>
 
-          <article class="feature">
+          <article class="feature has-clarif" role="button" tabindex="0" aria-expanded="false">
             <div class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="13" rx="1.5"/><path d="M8 21h8"/><path d="M12 17v4"/><path d="m9 8 4 2.5L9 13z" fill="currentColor" stroke="none"/></svg></div>
-            <h3 data-i18n="feat9">Mode TV plein écran</h3>
+            <h3 data-i18n="feat9">Mode TV plein écran</h3>            <div class="feature-pop"><p data-i18n="feat9_d">Un affichage épuré, pensé pour un écran mural en atelier ou en salle de réunion. Les indicateurs clés restent visibles de loin.</p></div>
           </article>
 
           <article class="feature feature-ai">
@@ -710,7 +711,7 @@
     <span class="lightbox-counter"></span>
   </div>
 
-  <script src="i18n.js?v=8"></script>
-  <script src="main.js?v=3"></script>
+  <script src="i18n.js?v=9"></script>
+  <script src="main.js?v=4"></script>
 </body>
 </html>
