@@ -160,7 +160,7 @@
 
       mentions_title: "Mentions légales",
       mentions_h1: "Éditeur du site",
-      mentions_editor: "Antonio Laisé<br />Conseil indépendant en structuration de données et tableaux de bord sur mesure<br />Hanovre, Allemagne<br />Contact : <a href=\"mailto:antonio.laise.pro@gmail.com\" class=\"link\">antonio.laise.pro@gmail.com</a>",
+      mentions_editor: "Antonio Laisé<br />Conseil indépendant en structuration de données et tableaux de bord sur mesure<br />Hanovre, Allemagne<br />Contact : <a href=\"mailto:contact@antonio-laise.com\" class=\"link\">contact@antonio-laise.com</a>",
       mentions_status: "Statut juridique en cours de constitution. La forme juridique, le numéro d'immatriculation (SIRET ou Steuernummer) et l'adresse professionnelle seront ajoutés dès la finalisation de la structure.",
       mentions_h2: "Directeur de publication",
       mentions_director: "Antonio Laisé",
@@ -188,7 +188,7 @@
       privacy_h4: "Cookies",
       privacy_cookies: "Ce site n'utilise aucun cookie de suivi ou publicitaire. Aucun consentement préalable n'est donc requis.",
       privacy_h5: "Vos droits",
-      privacy_rights: "Conformément au RGPD, vous disposez d'un droit d'accès, de rectification, d'effacement, de portabilité et d'opposition concernant vos données. Pour exercer ces droits, contactez-moi par email à <a href=\"mailto:antonio.laise.pro@gmail.com\" class=\"link\">antonio.laise.pro@gmail.com</a>.",
+      privacy_rights: "Conformément au RGPD, vous disposez d'un droit d'accès, de rectification, d'effacement, de portabilité et d'opposition concernant vos données. Pour exercer ces droits, contactez-moi par email à <a href=\"mailto:contact@antonio-laise.com\" class=\"link\">contact@antonio-laise.com</a>.",
       privacy_cnil: "Vous pouvez également introduire une réclamation auprès de la CNIL (France) ou du BfDI (Allemagne) si vous estimez que vos droits ne sont pas respectés.",
       privacy_h6: "Mise à jour",
       privacy_update: "Cette politique peut être mise à jour. La date de dernière mise à jour : juin 2026."
@@ -344,7 +344,7 @@
 
       mentions_title: "Legal notice",
       mentions_h1: "Site publisher",
-      mentions_editor: "Antonio Laisé<br />Independent consultant in data structuring and custom dashboards<br />Hanover, Germany<br />Contact: <a href=\"mailto:antonio.laise.pro@gmail.com\" class=\"link\">antonio.laise.pro@gmail.com</a>",
+      mentions_editor: "Antonio Laisé<br />Independent consultant in data structuring and custom dashboards<br />Hanover, Germany<br />Contact: <a href=\"mailto:contact@antonio-laise.com\" class=\"link\">contact@antonio-laise.com</a>",
       mentions_status: "Legal status being set up. The legal form, registration number (SIRET or Steuernummer) and business address will be added once the structure is finalised.",
       mentions_h2: "Publication director",
       mentions_director: "Antonio Laisé",
@@ -372,7 +372,7 @@
       privacy_h4: "Cookies",
       privacy_cookies: "This site uses no tracking or advertising cookies. No prior consent is therefore required.",
       privacy_h5: "Your rights",
-      privacy_rights: "Under the GDPR, you have the right to access, rectify, erase, port and object to your data. To exercise these rights, email me at <a href=\"mailto:antonio.laise.pro@gmail.com\" class=\"link\">antonio.laise.pro@gmail.com</a>.",
+      privacy_rights: "Under the GDPR, you have the right to access, rectify, erase, port and object to your data. To exercise these rights, email me at <a href=\"mailto:contact@antonio-laise.com\" class=\"link\">contact@antonio-laise.com</a>.",
       privacy_cnil: "You may also lodge a complaint with the CNIL (France) or the BfDI (Germany) if you believe your rights are not respected.",
       privacy_h6: "Updates",
       privacy_update: "This policy may be updated. Last updated: June 2026."
@@ -528,7 +528,7 @@
 
       mentions_title: "Impressum",
       mentions_h1: "Anbieter",
-      mentions_editor: "Antonio Laisé<br />Unabhängige Beratung für Datenstrukturierung und maßgeschneiderte Dashboards<br />Hannover, Deutschland<br />Kontakt: <a href=\"mailto:antonio.laise.pro@gmail.com\" class=\"link\">antonio.laise.pro@gmail.com</a>",
+      mentions_editor: "Antonio Laisé<br />Unabhängige Beratung für Datenstrukturierung und maßgeschneiderte Dashboards<br />Hannover, Deutschland<br />Kontakt: <a href=\"mailto:contact@antonio-laise.com\" class=\"link\">contact@antonio-laise.com</a>",
       mentions_status: "Rechtsform in Gründung. Rechtsform, Registernummer (SIRET oder Steuernummer) und Geschäftsadresse werden nach Abschluss der Gründung ergänzt.",
       mentions_h2: "Verantwortlich für den Inhalt",
       mentions_director: "Antonio Laisé",
@@ -556,7 +556,7 @@
       privacy_h4: "Cookies",
       privacy_cookies: "Diese Website verwendet keine Tracking- oder Werbe-Cookies. Eine vorherige Einwilligung ist daher nicht erforderlich.",
       privacy_h5: "Ihre Rechte",
-      privacy_rights: "Gemäß DSGVO haben Sie das Recht auf Auskunft, Berichtigung, Löschung, Datenübertragbarkeit und Widerspruch. Um diese Rechte auszuüben, schreiben Sie mir an <a href=\"mailto:antonio.laise.pro@gmail.com\" class=\"link\">antonio.laise.pro@gmail.com</a>.",
+      privacy_rights: "Gemäß DSGVO haben Sie das Recht auf Auskunft, Berichtigung, Löschung, Datenübertragbarkeit und Widerspruch. Um diese Rechte auszuüben, schreiben Sie mir an <a href=\"mailto:contact@antonio-laise.com\" class=\"link\">contact@antonio-laise.com</a>.",
       privacy_cnil: "Sie können sich auch bei der CNIL (Frankreich) oder dem BfDI (Deutschland) beschweren, wenn Sie der Ansicht sind, dass Ihre Rechte nicht gewahrt werden.",
       privacy_h6: "Aktualisierung",
       privacy_update: "Diese Richtlinie kann aktualisiert werden. Letzte Aktualisierung: Juni 2026."
